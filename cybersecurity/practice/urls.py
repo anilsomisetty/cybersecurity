@@ -19,10 +19,5 @@ from django.contrib import admin
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
-    url(r'^login/$', auth_views.login,{'template_name': 'auth/login.html'},name='login'),
-    url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
-    url(r'^signup/$', views.signup, name='signup'),
-    url(r'^learn/', include('learn.urls')),
-    url(r'^practice/', include('practice.urls')),
+    url(r'^$', views.practiceindex, name='practiceindex'),
 ]
