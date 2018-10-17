@@ -9,7 +9,10 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello, index page.")
+    if request.user.is_authenticated():
+        return render(request,'index_authenticated.html')
+    else:
+        return render(request,'index.html')
 
 def signup(request):
     if request.method == 'POST':
@@ -24,3 +27,12 @@ def signup(request):
     else:
         form = UserCreationForm()
     return render(request, 'auth/signup.html', {'form': form})
+
+
+def sample_view(request):
+    current_user = request.user
+    print current_user.username
+
+
+def add_articles(request):
+    return render(request,'articles/add_article.html')

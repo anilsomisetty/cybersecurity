@@ -25,4 +25,6 @@ urlpatterns = [
     url(r'^signup/$', views.signup, name='signup'),
     url(r'^learn/', include('learn.urls')),
     url(r'^practice/', include('practice.urls')),
+    url(r'^add_articles/',views.add_articles, name='add_articles' ),
+    # url(r'^user/',views.index, name='index' ), added as i changed redirect url after login
 ]

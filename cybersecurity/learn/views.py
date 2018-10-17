@@ -7,4 +7,4 @@ from django.http import HttpResponse
 # Create your views here.
 
 def learnindex(request):
-    return HttpResponse("Hello, Learn index page")
+    return render(request,'learn.html')
