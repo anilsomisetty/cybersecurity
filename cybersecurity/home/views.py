@@ -10,9 +10,9 @@ from django.shortcuts import render, redirect
 # Create your views here.
 def index(request):
     if request.user.is_authenticated():
-        return render(request,'index_authenticated.html')
+        return render(request,'index/index_authenticated.html')
     else:
-        return render(request,'index.html')
+        return render(request,'index/index.html')
 
 def signup(request):
     if request.method == 'POST':
