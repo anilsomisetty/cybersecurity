@@ -1,0 +1,58 @@
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+<link href="/static/auth/login.css" rel="stylesheet" id="bootstrap-css">
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="main">
+    
+    
+    <div class="container">
+<center>
+<div class="middle">
+      <div id="login">
+
+            {% if form.errors %}
+            <p style="color:maroon; font-size: 13px">Your username or password isn't correct. Please try again.</p>
+            {% endif %}
+
+          <form method="post" class="form">
+              {% csrf_token %}
+              <p ><span class="fa fa-user"></span><input   name="username"  type="text"  Placeholder="Username" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+              <p><span class="fa fa-lock"></span><input   name="password"  type="password"  Placeholder="Password" required></p> <!-- JS because of IE support; better: placeholder="Password" -->
+              
+
+              <span style="width:48%; text-align:left;  display: inline-block;"><a class="small-text" href="#">Forgot
+                  password?</a></span>
+                  <span style="width:50%; text-align:right;  display: inline-block;"><input type="submit" value="Sign In"></span>
+              
+                <style>
+                label {
+                  display: none;
+                }
+                </style>
+            
+            </form>
+            
+        <div class="clearfix"></div>
+
+      </div> <!-- end login -->
+      <div class="logo">CyberSec
+          
+          <div class="clearfix"></div>
+      </div>
+      
+      </div>
+</center>
+    </div>
+    <a href="/">home</a>
+
+</div>
+
+

@@ -1,0 +1,80 @@
+
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<link href="/static/auth/login.css" rel="stylesheet" id="bootstrap-css">
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="main">
+    
+    
+    <div class="container">
+<center>
+<div class="middle">
+      <div id="login">
+
+          <form method="post" class="form">
+              {% csrf_token %}
+                
+              <p ><span class="fa fa-user"></span><input   name="username"  type="text"  Placeholder="Username" required></p>
+              <p><span class="fa fa-user-circle"></span><input   name="first_name"  type="text"  Placeholder="Name" required></p> 
+              <p ><span class="fa fa-envelope"></span><input   name="email"  type="text"  Placeholder="Email" required></p> 
+              <p><span class="fa fa-lock"></span><input   name="password1"  type="password"  Placeholder="Password" required></p>
+              <p><span class="fa fa-lock"></span><input   name="password2"  type="password"  Placeholder="Confirm Password" required></p> 
+            
+             {% for field in form %}
+
+                {% for error in field.errors %}
+                 <strong>  <p  style="color: black; font-size : 10px;">{{ error }}</p> </strong>
+                {% endfor %}
+
+            {% endfor %}  
+
+            <span style="width:48%; text-align:left;  display: inline-block;"><strong><a style="background-color:black;font-size: 12px;padding: 10px 15px;text-align: center; "  class="small-text" href="/login">Login</a></span></strong>
+            <span style="width:50%; text-align:right;  display: inline-block;"><input type="submit" value="Sign Up"></span>
+                 <style>
+                        label {
+                            display: none;
+                        }
+                    </style>
+                <script>
+                  $('#id_username').attr('placeholder', 'Username');
+                  $('#id_first_name').attr('placeholder','Name');
+                  $('#id_email').attr('placeholder','Email');
+                  $('#id_password1').attr('placeholder','Password');
+                  $('#id_password2').attr('placeholder','Password Confirmation');
+              </script>
+            </form>
+        <div class="clearfix"></div>
+
+      </div> <!-- end login -->
+      <div class="logo">CyberSec
+          
+          <div class="clearfix"></div>
+      </div>
+      
+      </div>
+</center>
+    </div>
+    <a href="/">home</a>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  

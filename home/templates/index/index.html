@@ -1,0 +1,41 @@
+
+
+<link  rel="stylesheet" href="static/index/style.css">
+
+
+<center>
+  <h1 >
+Educational Application For CyberSecurity
+</h1></center>
+<marquee direction="right" behavior="alternate" scrollamount=8>Welcome Here!!</marquee>
+{% if user.is_authenticated %} 
+
+{% block content %}
+  {% if request.user.is_authenticated %}
+    Hello {{ request.user }}
+  {% endif %}
+{% endblock %}
+
+</br>
+
+<a href="/profile">profile</a>
+</br>
+<a href="/logout">logout</a>
+
+{% else %} 
+<a href="/login">login</a>
+</br>
+<a href="/signup">signup</a>
+{% endif %}
+
+</br>
+<a href="/learn">learn</a>
+</br>
+<a href="/practice">practice</a></br>
+
+
+<a href="/add_articles">add_articles</a></br>
+<a href="/shell">use_shell</a></br>
+
+<a href="/">Home</a></br>
+

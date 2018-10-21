@@ -1,0 +1,31 @@
+add article page
+
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-markdown/2.2.1/css/bootstrap-markdown.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-markdown/2.2.1/js/bootstrap-markdown.js"></script>
+
+<form>
+    <input name="title" type="text" placeholder="Title?" />
+    <textarea name="content" data-provide="markdown" rows="10">
+#Heading ONE
+
+- this is heading two
+- and heding three
+
+> quote here
+
+
+    </textarea>
+    <label class="checkbox">
+      <input name="publish" type="checkbox"> Publish
+    </label>
+    <hr/>
+    <button type="submit" class="btn">Submit</button>
+  </form>
+  

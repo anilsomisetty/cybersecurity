@@ -1,0 +1,68 @@
+body {
+    background: #fff;
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+    font-family: "Univers W01";
+    line-height: 1.4;
+  }
+  
+  .faq {
+    margin-bottom: 60px;
+  }
+  
+  .accordion,
+  .accordion-2,
+  .accordion-3 {
+    margin-bottom: -2px !important;
+  }
+  
+  .accordion h3,
+  .accordion-2 h3,
+  .accordion-3 h3 {
+    background: #e8e3db;
+    border-bottom: 1px solid #ddd5c9;
+    border-top: 1px solid #f4f1ed;
+    padding: 0.9rem 1.3rem 0.7rem 1.3rem !important;
+    font-weight: 400;
+    transition: background 0.1s ease-in-out;
+    -webkit-transition: background 0.1s ease-in-out;
+    -moz-transition: background 0.1s ease-in-out;
+    -o-transition: background 0.1s ease-in-out;
+  }
+  
+  .accordion h3:focus,
+  .accordion-2 h3:focus,
+  .accordion-3 h3:focus {
+    outline: none;
+  }
+  
+  .accordion h3:hover,
+  .accordion-2 h3:hover,
+  .accordion-3 h3:hover {
+    background: #d1c7b7;
+  }
+  
+  .accordion .ui-accordion-content,
+  .accordion-2 .ui-accordion-content,
+  .accordion-3 .ui-accordion-content {
+    border-left: 1px solid #e8e3db;
+    border-bottom: 1px solid #e8e3db;
+    border-right: 1px solid #e8e3db;
+  }
+  
+  .ui-accordion-header-active {
+    background: #d1c7b7 !important;
+  }
+  
+  .ui-accordion-content {
+    padding: 1.3rem 1.3rem 0.5rem;
+  }
+  
+  h3 {
+    margin-bottom: 0;
+  }
+  p {
+    margin: 0 auto 1.3rem;
+  }
+  

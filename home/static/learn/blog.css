@@ -1,0 +1,152 @@
+.blog
+{
+    display: inline-block;
+    background-color: white;
+    position: relative;
+    min-height: 5%;
+    overflow: hidden;
+    border: 1px;
+    border-style: solid solid solid solid;
+    border-color: #DDDDDD;
+    border-radius: 2px 2px 0px 0px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 0px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+.page {
+    /*position: fixed;*/
+    padding-top: 6%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 3%;
+}
+
+.subtopics
+{
+
+    /*word-wrap: break-word;
+    text-overflow: ellipsis;
+
+    left: 1%;*/
+    /*top: 35%;
+    position: absolute;
+    font-size: 120%;
+    width: 20%;*/
+}
+
+.title
+{
+    margin-left: 3%;
+    width: 94%;
+    border: 1px;
+    border-style: none none inset none;
+}
+
+.heading
+{
+    margin-top: 2%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    font-size: 140%;
+}
+
+.description
+{
+    width: 94%;
+    margin-top: 2%;
+    margin-left: 3%;
+    margin-right: 2%;
+    margin-bottom: 1%;
+    font-size: 90%;
+    word-wrap: break-word;
+}
+
+.addSubtopic
+{
+    position: absolute;
+    padding-top: 3%;
+    right: 5%;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.addDescription
+{
+    position: absolute;
+    margin-top: 1.7%;
+    right: 5%;
+    cursor: pointer;
+}
+
+.like
+{
+    position: relative;
+    padding: 1.5%;
+    cursor: pointer;
+}
+
+
+.dislike
+{
+    position: relative;
+    padding: 1.5%;
+    cursor: pointer;
+}
+
+.selection
+{
+    /*height: 15%;
+    width: 15%;
+    position: absolute;
+    top: 20%;*/
+    left: 1%;
+    font-size: 120%;
+}
+
+.display {
+    position: absolute;
+    top: 20%;
+    left: 1%;
+}
+
+.selected
+{
+    color: #6dacf8;
+    cursor: pointer;
+}
+
+.notselected
+{
+    color: #555555;
+}
+
+.verticalline
+{
+    position: absolute;
+    left: 3.5%;
+    top: -5%;
+    height: 60%;
+    width: 1%;
+    z-index: -1;
+    border-style: none none none dashed;
+    border-color: #BBBBBB;
+    border-width: 2px;
+}
+
+.verticalline2
+{
+    position: absolute;
+    left: 5.5%;
+    top: 34.5%;
+    height: 0%;
+    width: 1%;
+    z-index: -1;
+    border-style: none none none dashed;
+    border-color: #BBBBBB;
+    border-width: 2px;
+}
+
+.hide123
+{
+    visibility: hidden;
+}

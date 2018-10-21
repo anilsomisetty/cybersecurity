@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Learn | CodeBuddy</title>
+        <link rel="icon" type="image/png" href="/images/favicon3.png">
+        <script src="/static/learn/vendors/jquery/dist/jquery.min.js"></script>
+        <script src="/static/learn/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+        <link href='/static/learn/vendors/font-awesome/css/font-awesome.min.css' rel="stylesheet">
+        <link rel="stylesheet" href="/static/learn/vendors/bootstrap/dist/css/bootstrap.min.css">
+        <link rel='stylesheet' href='/static/learn/header.css' />
+        <link rel='stylesheet' href='/static/learn/topics.css' />
+        <script src='/static/learn/js/anal.js'></script>
+    </head>
+
+    <header>
+        <body style="background-color: #f7f7f7; position: relative">
+
+<div class="effect2">
+    <a href="/"><img src="/static/learn/images/LogoResize.png" alt="Image Not Found" class = "logo2"></a>
+    <a href="/" id="headerhome" class="homelabel"><i class="fa fa-home" style="cursor: pointer"></i> <label style="cursor: pointer">Home</label></a>
+    <a href="/learn" id="headerlearn" class="learnlabel"><i class="fa fa-book" style="cursor: pointer"></i> <label style="cursor: pointer">Learn</label></a>
+    <a href="/practice" id="headerpractice" class="problemslabel"><i class="fa fa-pencil" style="cursor: pointer"></i> <label style="cursor: pointer">Practice</label></a>
+    <a href="/contests" id="headercontests" class="contestslabel"><i class="fa fa-flag" style="cursor: pointer"></i> <label style="cursor: pointer">Contests</label></a>
+    <a href="/ranks/practice" id="headerrankings" class="rankingslabel"><i class="fa fa-trophy" style="cursor: pointer"></i> <label style="cursor: pointer">Rankings</label></a>
+    
+        <a data-toggle="modal" class="loginbutton" href="/login">Log In</a>
+        <a data-toggle="modal" class="signupbutton" href="/signup">Sign Up</a>
+    
+</div>
+
+
+    <div class="modal fade" id="loginsignupmodal" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" style="width: 35%">
+            <div class="modal-content">
+                <div class="modal-body loginsignupbody" style="height: 400px;">
+                    <div class="fa fa-times close" data-dismiss="modal" style="position: absolute; top: 1%; left: 95.5%;"></div>
+                    <ul class="nav nav-tabs" style="width: 95%; position: absolute; top: 7%;">
+                        <li id="loginli" style="width: 50%; text-align: center;"><a data-toggle="tab" href="#logintab">Log In</a></li>
+                        <li id="signupli" style="width: 49%; text-align: center;"><a id="tfat" data-toggle="tab" href="#signuptab">Sign Up</a></li>
+                    </ul>
+                    <div class="tab-content" style="position: absolute; top: 25%; width: 95%; padding: 2%; min-height: 300px;">
+                        <div class="tab-pane fade in" id="logintab">
+                            <input id = "username" maxlength="20" type = "text" required = "" class = "textfielduser textfield" placeholder = "Username"/>
+                            <input id = "password" maxlength="20" type = "password" required = "" class = "textfieldpassword textfield" placeholder = "Password"/>
+                            <input id = "login" onclick="Login()" type = "button" value = "Log In" class = "button1" />
+                            <a data-toggle="tab" onclick="func3()" href="#forgotpassword" class="forgotpassword"><small>Forgot Password ?</small></a>
+                            <label id="errormsg" class="errmsg"></label>
+                        </div>
+                        <div class="tab-pane fade in" id="signuptab">
+                            <input id = "handle" maxlength="20" type = "text" required = "" class = "textfielduser textfield" placeholder = "Username"/>
+                            <input id = "firstname" maxlength="20" type = "text" required = "" class = "textfieldfname textfield" placeholder = "First Name"/>
+                            <input id = "lastname" maxlength="20" type = "text" required = "" class = "textfieldlname textfield" placeholder = "Last Name"/>
+                            <input id = "emailid" maxlength="50" type = "text" required = "" class = "textfieldemail textfield" placeholder = "Email Id"/>
+                            <input id = "signup" onclick="SignUp()" type = "button" value = "Sign Up" class = "buttonSign" />
+                            <label id="errormsg2" class="errmsg2"></label>
+                        </div>
+                        <div class="tab-pane fade in" id="forgotpassword">
+                            <label style="position: absolute; left: 20%; width: 60%; text-align: center;">New password will be sent to following email id</label>
+                            <input id = "usernamefp" name = "usernamefp" maxlength="50" type = "text" required = "" class = "textfielduserfp textfield" placeholder = "Email Id"/>
+                            <input id = "signup" onclick="ForgotPassword()" type = "button" value = "Send Password" class = "buttonFP" />
+                            <label id="errormsg3" class="errmsg3"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" language="javascript">
+
+        function clearAll()
+        {
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            document.getElementById('handle').value = '';
+            document.getElementById('firstname').value = '';
+            document.getElementById('lastname').value = '';
+            document.getElementById('emailid').value = '';
+            document.getElementById('usernamefp').value = '';
+        }
+
+        function func1() {
+            document.getElementById('loginli').className = 'active';
+            document.getElementById('logintab').className = 'tab-pane fade in active';
+            document.getElementById('signupli').className = '';
+            document.getElementById('signuptab').className = 'tab-pane fade in';
+            document.getElementById('forgotpassword').className = 'tab-pane fade in';
+            clearAll();
+        }
+
+        function func2() {
+            document.getElementById('loginli').className = '';
+            document.getElementById('logintab').className = 'tab-pane fade in';
+            document.getElementById('signupli').className = 'active';
+            document.getElementById('signuptab').className = 'tab-pane fade in active';
+            document.getElementById('forgotpassword').className = 'tab-pane fade in';
+            clearAll();
+        }
+
+        function func3() {
+            document.getElementById('loginli').className = '';
+            document.getElementById('signupli').className = '';
+        }
+
+        function Login() {
+            $.post('/checkvaliduser', {username: document.getElementById('username').value, password: document.getElementById('password').value},
+            function(res) {
+                if (res.success == 0) {
+                    document.getElementById('errormsg').innerText = res.msg;
+                    document.getElementById('errormsg').style.color = 'red';
+                    $('#errormsg').fadeIn(500).delay(2000).fadeOut(500);
+                }
+                else {
+                    location.reload();
+                }
+            });
+        }
+
+        function SignUp() {
+            $.post('/signup', {
+                username: document.getElementById('handle').value,
+                fname: document.getElementById('firstname').value,
+                lname: document.getElementById('lastname').value,
+                emailid: document.getElementById('emailid').value
+            }, function (res) {
+                document.getElementById('errormsg2').innerText = res.msg;
+                if (res.success == 0) {
+                    document.getElementById('errormsg2').style.color = 'red';
+                }
+                else {
+                    document.getElementById('errormsg2').style.color = '#1FB618';
+                }
+                $('#errormsg2').fadeIn(500).delay(2000).fadeOut(500);
+            });
+        }
+
+
+        function ForgotPassword() {
+            $.post('/forgotpassword', {emailid: document.getElementById('usernamefp').value}, function (res) {
+                document.getElementById('errormsg3').innerText = res.msg;
+                if (res.success == 0) {
+                    document.getElementById('errormsg3').style.color = 'red';
+                }
+                else {
+                    document.getElementById('errormsg3').style.color = '#1FB618';
+                }
+                $('#errormsg3').fadeIn(500).delay(2000).fadeOut(500);
+            });
+        }
+
+    </script>
+
+    </header>
+
+    <div class="topicscontainer">
+
+        
+            <div class="effect3" id = "addNewTopic0">
+                <a href="/reversing/1">
+                    <img src="/static/learn/images/BlogImages/default0.jpg" id="image1" alt="Image Not Found" class = "addTopicImage">
+                    <div style="text-align: center; padding-top: 2%"><label class="textDisplay">Reversing</label></div>
+                </a>
+            </div>
+            <script type="text/javascript" language="javascript">
+                if ("visible" == "hidden")
+                    document.getElementById('addNewTopic0').style.opacity = 0.5;
+            </script>
+        
+            <div class="effect3" id = "addNewTopic1">
+                <a href="/learn/ComplexityAnalysis">
+                    <img src="/static/learn/images/BlogImages/default1.jpg" id="image2" alt="Image Not Found" class = "addTopicImage">
+                    
+                    <div style="text-align: center; padding-top: 2%"><label class="textDisplay">Forensics</label></div>
+                </a>
+            </div>
+            <script type="text/javascript" language="javascript">
+                if ("visible" == "hidden")
+                    document.getElementById('addNewTopic1').style.opacity = 0.5;
+            </script>
+        
+            <div class="effect3" id = "addNewTopic2">
+                <a href="/learn/SortingAlgorithms">
+                    <img src="/static/learn/images/BlogImages/default0.jpg" id="image3" alt="Image Not Found" class = "addTopicImage">
+                    
+                    <div style="text-align: center; padding-top: 2%"><label class="textDisplay">Cryptography</label></div>
+                </a>
+            </div>
+            <script type="text/javascript" language="javascript">
+                if ("visible" == "hidden")
+                    document.getElementById('addNewTopic2').style.opacity = 0.5;
+            </script>
+        
+            <div class="effect3" id = "addNewTopic3">
+                <a href="/learn/LinkedList">
+                    <img src="/static/learn/images/BlogImages/default1.jpg" id="image4" alt="Image Not Found" class = "addTopicImage">
+                    
+                    <div style="text-align: center; padding-top: 2%"><label class="textDisplay">Web Exploitation</label></div>
+                </a>
+            </div>
+            <script type="text/javascript" language="javascript">
+                if ("visible" == "hidden")
+                    document.getElementById('addNewTopic3').style.opacity = 0.5;
+            </script>
+        
+            <div class="effect3" id = "addNewTopic4">
+                <a href="/learn/NumberTheory">
+                    <img src="/static/learn/images/BlogImages/default0.jpg" id="image5" alt="Image Not Found" class = "addTopicImage">
+                    
+                    <div style="text-align: center; padding-top: 2%"><label class="textDisplay">Binary Exploitation</label></div>
+                </a>
+            </div>
+            <script type="text/javascript" language="javascript">
+                if ("visible" == "hidden")
+                    document.getElementById('addNewTopic4').style.opacity = 0.5;
+            </script>
+        
+            <div class="effect3" id = "addNewTopic5">
+                <a href="/learn/C++STL">
+                    <img src="/static/learn/images/BlogImages/default1.jpg" id="image6" alt="Image Not Found" class = "addTopicImage">
+                    
+                    <div style="text-align: center; padding-top: 2%"><label class="textDisplay">General Skills</label></div>
+                </a>
+            </div>
+            <script type="text/javascript" language="javascript">
+                if ("visible" == "hidden")
+                    document.getElementById('addNewTopic5').style.opacity = 0.5;
+            </script>
+        
+            <!-- <div class="effect3" id = "addNewTopic6">
+                <a href="/learn/BasicDataStructures">
+                    <img src="/static/learn/images/BlogImages/default0.jpg" id="image7" alt="Image Not Found" class = "addTopicImage">
+                    
+                    <div style="text-align: center; padding-top: 2%"><label class="textDisplay">Assembly</label></div>
+                </a>
+            </div>
+            <script type="text/javascript" language="javascript">
+                if ("visible" == "hidden")
+                    document.getElementById('addNewTopic6').style.opacity = 0.5;
+            </script>
+        
+            <div class="effect3" id = "addNewTopic7">
+                <a href="/learn/SearchingAlgorithms">
+                    <img src="/static/learn/images/BlogImages/default1.jpg" id="image8" alt="Image Not Found" class = "addTopicImage">
+                    
+                    <div style="text-align: center; padding-top: 2%"><label class="textDisplay">Searching Algorithms</label></div>
+                </a>
+            </div>
+            <script type="text/javascript" language="javascript">
+                if ("visible" == "hidden")
+                    document.getElementById('addNewTopic7').style.opacity = 0.5;
+            </script>
+        
+            <div class="effect3" id = "addNewTopic8">
+                <a href="/learn/SegmentTree">
+                    <img src="/static/learn/images/BlogImages/default0.jpg" id="image9" alt="Image Not Found" class = "addTopicImage">
+                    
+                    <div style="text-align: center; padding-top: 2%"><label class="textDisplay">Segment Tree</label></div>
+                </a>
+            </div>
+            <script type="text/javascript" language="javascript">
+                if ("visible" == "hidden")
+                    document.getElementById('addNewTopic8').style.opacity = 0.5;
+            </script>
+        
+            <div class="effect3" id = "addNewTopic9">
+                <a href="/learn/BitManipulation">
+                    <img src="/static/learn/images/BlogImages/default1.jpg" id="image10" alt="Image Not Found" class = "addTopicImage">
+                    
+                    <div style="text-align: center; padding-top: 2%"><label class="textDisplay">Bit Manipulation</label></div>
+                </a>
+            </div>
+            <script type="text/javascript" language="javascript">
+                if ("visible" == "hidden")
+                    document.getElementById('addNewTopic9').style.opacity = 0.5;
+            </script>
+         -->
+
+        
+            <script type="text/javascript" language="javascript">
+                if (document.getElementById('like1'))
+                    document.getElementById('like1').innerText = "26";
+            </script>
+        
+            <script type="text/javascript" language="javascript">
+                if (document.getElementById('like2'))
+                    document.getElementById('like2').innerText = "5";
+            </script>
+        
+            <script type="text/javascript" language="javascript">
+                if (document.getElementById('like3'))
+                    document.getElementById('like3').innerText = "31";
+            </script>
+        
+            <script type="text/javascript" language="javascript">
+                if (document.getElementById('like4'))
+                    document.getElementById('like4').innerText = "26";
+            </script>
+        
+            <script type="text/javascript" language="javascript">
+                if (document.getElementById('like5'))
+                    document.getElementById('like5').innerText = "40";
+            </script>
+        
+            <script type="text/javascript" language="javascript">
+                if (document.getElementById('like6'))
+                    document.getElementById('like6').innerText = "66";
+            </script>
+        
+            <script type="text/javascript" language="javascript">
+                if (document.getElementById('like7'))
+                    document.getElementById('like7').innerText = "5";
+            </script>
+        
+            <script type="text/javascript" language="javascript">
+                if (document.getElementById('like8'))
+                    document.getElementById('like8').innerText = "9";
+            </script>
+        
+            <script type="text/javascript" language="javascript">
+                if (document.getElementById('like9'))
+                    document.getElementById('like9').innerText = "19";
+            </script>
+        
+            <script type="text/javascript" language="javascript">
+                if (document.getElementById('like10'))
+                    document.getElementById('like10').innerText = "26";
+            </script>
+        
+            <script type="text/javascript" language="javascript">
+                if (document.getElementById('like11'))
+                    document.getElementById('like11').innerText = "1";
+            </script>
+        
+
+        
+
+        
+
+    </div>
+
+
+    <!-- <script src='/static/learn/vendors/jquery/dist/jquery.min.js'></script>
+    <script src='/static/learn/js/custom.js'></script>
+    <script type="text/javascript" language="javascript">
+
+        document.getElementById('headerlearn').className = 'learnlabel selectedHeaderOption';
+    </script>
+    <footer>
+            <footer id="footer" class="footercontainer">
+        <small><label class="footerfollowus">Follow Us</label></small>
+        <a href="https://www.facebook.com/CodeBuddyOfficial" target="_blank" class="fa fa-facebook-square fa-2x fotterfb"></a>
+        <a href="/aboutus" class="footeraboutus"><label style="cursor: pointer">About Us</label></a>
+        <a onclick="setTitle('Feedback')" data-toggle="modal" data-target="#feedbackorbug" class="footeraboutus"><label style="cursor: pointer">Feedback</label></a>
+        <a onclick="setDoubtTitle('Ask your Doubt')" data-toggle="modal" data-target="#askyourdoubt" class = "footeraboutus" style="border: none"><label style="cursor: pointer">Ask your Doubt</label></a>
+        <label class="footercopyright"><label class="fa fa-copyright"></label> 2017 CodeBuddy</label>
+        <label class="footercontactus">Contact Us</label>
+        <label class="fa fa-phone footercontactno"> +91 - 8445261407</label>
+        <label class="fa fa-phone footercontactno2"> +91 - 8858840981</label>
+        <label class="fa fa-envelope footercontactmail"> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8cffe4e5e7e4edfeebedfeebbdbebcb8ccebe1ede5e0a2efe3e1">[email&#160;protected]</a></label>
+        <label class="fa fa-envelope footercontactmail2"> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c5a8a4aca9f7a4b6adb2acabfcf085a2a8a4aca9eba6aaa8">[email&#160;protected]</a></label>
+    </footer>
+
+    <div class="modal fade" id="feedbackorbug" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" id="feedbackorbugtitle"></h4>
+                </div>
+                <div class="modal-body" style="height: 100%">
+                    <div class="form-group">
+                        <label id="feedbackorbugmsg"></label>
+                        <textarea class="form-control" style="resize: none" required="" rows="7" name="feedbackorbugdescription" id="feedbackorbugdescription" placeholder=""></textarea>
+                    </div>
+                    <button onclick="feedbackorbug()" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal fade" id="askyourdoubt" role="dialog">
+        <div class="modal-dialog">
+            <div class = "modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" id="doubttitle"></h4>
+                </div>
+                <div class="modal-body" style="height: 100%">
+                    <div class="form-group">
+                        <label id="doubtmsg"></label>
+                        <textarea class="form-control" style="resize: none" required="" rows="7" name="doubtdescription" id="doubtdescription" placeholder=""></textarea>
+                    </div>
+                    <button onclick="askyourdoubt()" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" language="javascript">
+        var docheight = $(document).height();
+        var footertop = $('footer').offset().top;
+        var footerheight = $('footer').height();
+        document.getElementById('footer').style.top = String(docheight - (footerheight + footertop)) + 'px';
+
+        function setTitle(str) {
+            document.getElementById('feedbackorbugtitle').innerText = str;
+            document.getElementById('feedbackorbugdescription').value = '';
+            document.getElementById('feedbackorbugdescription').placeholder = str;
+        }
+
+        function setDoubtTitle(str) {
+            document.getElementById('doubttitle').innerText = str;
+            document.getElementById('doubtdescription').value = '';
+            document.getElementById('doubtdescription').placeholder = str;
+        }
+
+        function feedbackorbug() {
+            var feedbackorbugdescription = document.getElementById('feedbackorbugdescription').value;
+            $.post('/reportfeedbackorbug', {feedbackorbugdescription: feedbackorbugdescription}, function (res) {
+                if (res.success == 0)
+                    document.getElementById('feedbackorbugmsg').style.color = 'red';
+                else
+                    document.getElementById('feedbackorbugmsg').style.color = 'green';
+                document.getElementById('feedbackorbugmsg').innerText = res.msg;
+                $('#feedbackorbugmsg').hide().fadeIn(500).delay(1000).fadeOut(500);
+            });
+        }
+
+        function askyourdoubt() {
+            var doubtdescription = document.getElementById('doubtdescription').value;
+            $.post('/askingusdoubt',{doubtdescription: doubtdescription}, function (res) {
+                if (res.success == 0)
+                    document.getElementById('doubtmsg').style.color = 'red';
+                else
+                    document.getElementById('doubtmsg').style.color = 'green';
+                document.getElementById('doubtmsg').innerText = res.msg;
+                $('#doubtmsg').hide().fadeIn(500).delay(1000).fadeOut(500);
+            });
+        }
+
+    </script> -->
+
+</body>
+
+    </footer>
+</html>
+
+
+
