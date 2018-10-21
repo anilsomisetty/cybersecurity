@@ -25,15 +25,14 @@ SECRET_KEY = '5*zo+_^3!xjlt6+q*)&j@h2-am(d^_en-1pfl#2whm5d&es%d6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['edu-cybersec.herokuapp.com','cybersec-edu.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['edu-cybersec.herokuapp.com','cybersec-edu.herokuapp.com', 'localhost', '127.0.0.1','172.19.19.147']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
-    'learn.apps.LearnConfig',
-    'practice.apps.PracticeConfig',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-
+#'learn.apps.LearnConfig',
+    # 'practice.apps.PracticeConfig',
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
