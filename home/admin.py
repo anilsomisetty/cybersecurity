@@ -5,4 +5,9 @@ from django.contrib import admin
 import models as m
 
 admin.site.register(m.question)
-admin.site.register(m.article)
+admin.site.register(m.reversingarticle)
+admin.site.register(m.forensicsarticle)
+admin.site.register(m.webarticle)
+admin.site.register(m.cryptoarticle)
+admin.site.register(m.generalarticle)
+admin.site.register(m.binaryarticle)

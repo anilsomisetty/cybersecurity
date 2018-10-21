@@ -26,13 +26,7 @@
               {% csrf_token %}
               <p ><span class="fa fa-user"></span><input   name="username"  type="text"  Placeholder="Username" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
               <p><span class="fa fa-lock"></span><input   name="password"  type="password"  Placeholder="Password" required></p> <!-- JS because of IE support; better: placeholder="Password" -->
-              {% for field in form %}
-
-                {% for error in field.errors %}
-                 <strong>  <p  style="color: black; font-size : 10px;">{{ error }}</p> </strong>
-                {% endfor %}
-
-            {% endfor %} 
+              
 
               <span style="width:48%; text-align:left;  display: inline-block;"><a class="small-text" href="#">Forgot
                   password?</a></span>
@@ -50,8 +44,7 @@
 
       </div> <!-- end login -->
       <div class="logo">
-            <img src="/static/auth/logo1.png" alt="CyberSecurity">
-          
+        <img src="/static/auth/logo1.png" alt="CyberSecurity">
           <div class="clearfix"></div>
       </div>
       

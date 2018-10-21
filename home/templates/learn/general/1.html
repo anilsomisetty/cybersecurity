@@ -167,7 +167,7 @@
                     {% for article in articles %}
                     <li role="presentation" id={{article.articleid}} style="font-size: 95%"><a href="{{article.articleid}}" > <div> {{ article.articlename }}</div> </a>
                     <script type="text/javascript" language="javascript">
-                        if ('{{article.articleid}}' == '2')
+                        if ('{{article.articleid}}' == '1')
                             document.getElementById('{{article.articleid}}').className = 'active';
                         if ('visible' == 'hidden')
                             document.getElementById('{{article.articleid}}').style.opacity = 0.5;
@@ -259,317 +259,46 @@
 </div>
 
 
-<textarea type="text" id='hiddenText' class="hide123">&lt;div&gt;
-	Programming is a process of writing down a process flow in a particular notation, so that it can be understood and executed by a compiler. The notion is called as the programming language.
+<textarea type="text" id='hiddenText' class="hide123">&lt;h1&gt;What is Programming ?&lt;/h1&gt;
+&lt;b&gt;Programming&lt;/b&gt; is the process of taking an algorithm and encoding it into a notation, a programming language, so that it can be executed by a computer. Although many programming languages and many different types of computers exist, the important first step is the need to have the solution. Without an algorithm there can be no program. &lt;br&gt;&lt;br&gt;
 
-	&lt;h4&gt;Programming in C&lt;/h4&gt;
-	&lt;ul&gt;
-		&lt;li&gt;
-			&lt;b&gt;&lt;u&gt;
-				Characters in C		
-			&lt;/u&gt;&lt;/b&gt;
-		&lt;/li&gt;
-		C character set is formed of Alphabets(A-Z, a-z), Digits(0-9) and special characters.
-		&lt;img src=&#34;https://s14.postimg.org/yx5m6za8h/temp.png&#34; /&gt;&lt;br&gt;
-		&lt;hr&gt;
-		&lt;li&gt;
-			&lt;b&gt;&lt;u&gt;
-				Identifiers and Keywords		
-			&lt;/u&gt;&lt;/b&gt;
-		&lt;/li&gt;
-		&lt;b&gt;Identifiers-&lt;/b&gt;&lt;br&gt;
-		Each program element in a C program are given a name called identifiers.&lt;br&gt;
-		&lt;b&gt;Rules for constructing Identifier names in C&lt;/b&gt;&lt;br&gt;
-		&lt;ul&gt;
-			&lt;li&gt;First character should be an alphabet or underscore.&lt;/li&gt;
-			&lt;li&gt;Succeeding characters might be digits or letter.&lt;/li&gt;
-			&lt;li&gt;Punctuation and special characters aren&#39;t allowed except underscore.&lt;/li&gt;
-			&lt;li&gt;The length of an identifier should not excede 31 characters following the above conditions.&lt;/li&gt;
-		&lt;/ul&gt;
-		&lt;br&gt;
-		&lt;b&gt;Keywords&lt;/b&gt;&lt;br&gt;
-		&lt;ul&gt;
-			&lt;li&gt;Keywords are pre-defined words whose meaning has already being determined in a C Compiler.&lt;/li&gt;
-			&lt;li&gt;Since they have a predefined meaning in the compiler so they &lt;u&gt;can&#39;t&lt;/u&gt; be used as identifiers.&lt;/li&gt;
-		&lt;/ul&gt; &lt;br&gt;
-		Following is the list of 32 Keywords in C language. &lt;br&gt;
-		&lt;img src=&#34;https://s13.postimg.org/cpkbxqxcn/temp.png&#34;/&gt;&lt;br/&gt;&lt;hr&gt;
 
-		&lt;li&gt;
-			&lt;b&gt;&lt;u&gt;
-				Data Types		
-			&lt;/u&gt;&lt;/b&gt;
-		&lt;/li&gt;
-		&lt;ul&gt;
-			&lt;li&gt;C data types are defined as the data storage format that a variable can store a data to perform a specific operation.&lt;/li&gt;
-			&lt;li&gt;Data types are used to define a variable before it can be used in a program.&lt;/li&gt;
-			&lt;li&gt;Size of variables, constants and array are determined by the data types.&lt;/li&gt;
-		&lt;/ul&gt;
-		&lt;br&gt;
-		There are four data types in C language. They are, &lt;br&gt;
-		&lt;table border=&#34;1&#34;&gt;
-			&lt;th&gt;Types&lt;/th&gt;
-			&lt;th&gt;Data Types&lt;/th&gt;
-			&lt;tr&gt;
-				&lt;td&gt;Basic data types&lt;/td&gt;
-				&lt;td&gt;int, char, float, double&lt;/td&gt;
-			&lt;/tr&gt;
-			&lt;tr&gt;
-				&lt;td&gt;Enumeration data type&lt;/td&gt;
-				&lt;td&gt;enum&lt;/td&gt;
-			&lt;/tr&gt;
-			&lt;tr&gt;
-				&lt;td&gt;Derived data type&lt;/td&gt;
-				&lt;td&gt;pointer, array, structure, union&lt;/td&gt;
-			&lt;/tr&gt;
-			&lt;tr&gt;
-				&lt;td&gt;Void data type&lt;/td&gt;
-				&lt;td&gt;void&lt;/td&gt;
-			&lt;/tr&gt;
-		&lt;/table&gt;&lt;br&gt;
-		&lt;b&gt;Basic Data Types&lt;/b&gt;
-		&lt;ul&gt;
-			&lt;li&gt;&lt;b&gt;Integer data types&lt;/b&gt;
-			&lt;br&gt;
-			Integer data type allows a variable to store numeric values. &lt;u&gt;int&lt;/u&gt; or &lt;u&gt;long int&lt;/u&gt; or &lt;u&gt;long long int&lt;/u&gt; can be used to refer integer data type. The difference between them is of range of values they can store. Also note that, we &lt;u&gt;can&#39;t&lt;/u&gt; store decimal values using integer data types. If we try to store a decimal value in integer data type then the decimal part will be truncated and the remaing value will be stored in the variable.
-			Ranges of Integer data types:-
-			&lt;table border=&#34;1&#34;&gt;
-				&lt;th&gt;Data Type&lt;/th&gt;
-				&lt;th&gt;Range&lt;/th&gt;
-				&lt;tr&gt;
-					&lt;td&gt;int&lt;/td&gt;
-					&lt;td&gt;-32,768 to 32,767 or -2,147,483,648 to 2,147,483,647&lt;/td&gt;
-				&lt;/tr&gt;
-				&lt;tr&gt;
-					&lt;td&gt;long int&lt;/td&gt;
-					&lt;td&gt;-2,147,483,648 to 2,147,483,647&lt;/td&gt;
-				&lt;/tr&gt;
-				&lt;tr&gt;
-					&lt;td&gt;long long int&lt;/td&gt;
-					&lt;td&gt;-2^63 + 1 to 2^63 -1&lt;/td&gt;
-				&lt;/tr&gt;
-			&lt;/table&gt;
+Computer science is not the study of programming. Programming, however, is an important part of what a computer scientist does. Programming is often the way that we create a representation for our solutions. Therefore, this language representation and the process of creating it becomes a fundamental part of the discipline. &lt;br&gt;&lt;br&gt;
 
-			&lt;/li&gt;
-			&lt;li&gt;&lt;b&gt;Character data types&lt;/b&gt;
-				&lt;br&gt;
-				Character data type allows a variable to store only one character. &lt;u&gt;char&lt;/u&gt; keyword is used to refer charact data type.
-			&lt;/li&gt;
-			&lt;li&gt;&lt;b&gt;Floating point data type&lt;/b&gt;
-				&lt;br&gt;
-				Floating point data type are used to store real numbers. It is of two types:- &lt;br&gt;
-				&lt;ul&gt;&lt;li&gt;Float&lt;/li&gt;&lt;li&gt;Double&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
-				&lt;ul&gt;
-					&lt;li&gt;Float
-						&lt;br&gt;
-						It allows to store decimal values with the precision of 6 digits. &lt;u&gt;float&lt;/u&gt; keyword is used to refer float data type. The range of float is &lt;b&gt;1.2E-38&lt;/b&gt; to &lt;b&gt;3.4E+38&lt;/b&gt;.
-					&lt;/li&gt;
-					&lt;li&gt;Double
-						&lt;br&gt;
-						It is also same as float data type which allows upto a precision of 15 digits. The range of double is from &lt;b&gt;2.3E-308&lt;/b&gt; to &lt;b&gt;1.7E+308&lt;/b&gt;. &lt;u&gt;double&lt;/u&gt; is the keyword for double data type.
-					&lt;/li&gt;
-				&lt;/ul&gt;
-			&lt;/li&gt;
-		&lt;/ul&gt;
-		&lt;hr&gt;
+&lt;b&gt;Algorithms&lt;/b&gt; describe the solution to a problem in terms of the data needed to represent the problem instance and the set of steps necessary to produce the intended result. Programming languages must provide a notational way to represent both the process and the data. To this end, languages provide control constructs and data types. &lt;br&gt;&lt;br&gt;
 
-		&lt;li&gt;
-			&lt;b&gt;&lt;u&gt;
-				Constants and Variables		
-			&lt;/u&gt;&lt;/b&gt;
-		&lt;/li&gt;
-		A constant is an entity that doesn&#39;t change whereas a variable is an entity that may change.&lt;br&gt;
-		&lt;b&gt;Constants:-&lt;/b&gt;&lt;br&gt;
-		Constants are diviede majorly in two categories&lt;br&gt;
-		&lt;ul&gt;
-			&lt;li&gt;Integer constants&lt;/li&gt;
-			&lt;li&gt;Real constants&lt;/li&gt;
-			&lt;li&gt;Character constants&lt;/li&gt;
-			&lt;li&gt;Backslash character constants&lt;/li&gt;
-		&lt;/ul&gt;
-		&lt;br&gt;
-		We have already discussed the properties of the Integer,Character and Real constants in data types.
-		&lt;br&gt;
-		&lt;b&gt;Backslash character constants&lt;/b&gt;&lt;br&gt;
-		There are some characters that have special meaning in C language. They should be preceded by backslash symbol to make use of special function of them. Given below is the list of special characters and their purpose.
-		&lt;br&gt;
-		&lt;table border=&#34;1&#34;&gt;
-			&lt;th&gt;Backslash character&lt;/th&gt;
-			&lt;th&gt;Meaning&lt;/th&gt;
-			&lt;tr&gt;
-				&lt;td&gt;\b&lt;/td&gt;
-				&lt;td&gt;Backspace&lt;/td&gt;
-			&lt;/tr&gt;
-			&lt;tr&gt;
-				&lt;td&gt;\f&lt;/td&gt;
-				&lt;td&gt;Form feed&lt;/td&gt;
-			&lt;/tr&gt;
-			&lt;tr&gt;
-				&lt;td&gt;\n&lt;/td&gt;
-				&lt;td&gt;New Line&lt;/td&gt;
-			&lt;/tr&gt;
-			&lt;tr&gt;
-				&lt;td&gt;\r&lt;/td&gt;
-				&lt;td&gt;Carriage return&lt;/td&gt;
-			&lt;/tr&gt;
-			&lt;tr&gt;
-				&lt;td&gt;\t&lt;/td&gt;
-				&lt;td&gt;Horizontal Tab&lt;/td&gt;
-			&lt;/tr&gt;
-			&lt;tr&gt;
-				&lt;td&gt;\&#34;&lt;/td&gt;
-				&lt;td&gt;Double Quote&lt;/td&gt;
-			&lt;/tr&gt;
-			&lt;tr&gt;
-				&lt;td&gt;\&#39;&lt;/td&gt;
-				&lt;td&gt;Single Quote&lt;/td&gt;
-			&lt;/tr&gt;
-			&lt;tr&gt;
-				&lt;td&gt;\\&lt;/td&gt;
-				&lt;td&gt;Backslash&lt;/td&gt;
-			&lt;/tr&gt;
-			&lt;tr&gt;
-				&lt;td&gt;\v&lt;/td&gt;
-				&lt;td&gt;Vertical Tab&lt;/td&gt;
-			&lt;/tr&gt;
-			&lt;tr&gt;
-				&lt;td&gt;\a&lt;/td&gt;
-				&lt;td&gt;Alert or bell&lt;/td&gt;
-			&lt;/tr&gt;
-			&lt;tr&gt;
-				&lt;td&gt;\?&lt;/td&gt;
-				&lt;td&gt;Question mark&lt;/td&gt;
-			&lt;/tr&gt;
-			&lt;tr&gt;
-				&lt;td&gt;\N&lt;/td&gt;
-				&lt;td&gt;Octal constant (N is an octal constant)&lt;/td&gt;
-			&lt;/tr&gt;
-			&lt;tr&gt;
-				&lt;td&gt;\XN&lt;/td&gt;
-				&lt;td&gt;Hexadecimal constant (N – hex.dcml cnst)&lt;/td&gt;
-			&lt;/tr&gt;
-		&lt;/table&gt;
-		&lt;br&gt;
-		&lt;b&gt;Variables:-&lt;/b&gt;&lt;br&gt;
-		C variable is a named location in a memory where a program can manipulate the data. This location is used to hold the value of the variable. The value of the C variable may get change in the program. C variable might be belonging to any of the data type like int, float, char etc. Variables should be declared in the C program before to use. There are 2 types of variables- &lt;br&gt;
-		&lt;ul&gt;
-			&lt;li&gt;Local Variable-&lt;br&gt;The scope of local variables will be within the function only. These variables are declared within the function and can’t be accessed outside the function.&lt;/li&gt;
-			&lt;li&gt;Global Variable-&lt;br&gt;The scope of global variables will be throughout the program. These variables can be accessed from anywhere in the program. This variable is defined outside the main function. So that, this variable is visible to main function and all other sub functions.&lt;/li&gt;
-		&lt;/ul&gt; 
-		&lt;hr&gt;
+&lt;b&gt;Control constructs&lt;/b&gt; allow algorithmic steps to be represented in a convenient yet unambiguous way. At a minimum, algorithms require constructs that perform sequential processing, selection for decision-making, and iteration for repetitive control. As long as the language provides these basic statements, it can be used for algorithm representation&lt;br&gt;&lt;br&gt;
 
-		&lt;li&gt;
-			&lt;b&gt;&lt;u&gt;
-				Comments		
-			&lt;/u&gt;&lt;/b&gt;
-		&lt;/li&gt;
-		The comments are added in a program with the purpose of making the source code easier to understand by the programmer and are ignored by the compiler. There are two types of comments
-		&lt;ul&gt;
-			&lt;li&gt;Single Line Comment&lt;br&gt;We can make a single line comment by placing &lt;b&gt;//&lt;/b&gt; where we want to comment.&lt;/li&gt; &lt;!-- Language --&gt;
-			&lt;li&gt;Multi Line Comment&lt;br&gt;Multi-line comments in the program should be enclosed within &lt;b&gt;/*&lt;/b&gt; and &lt;b&gt;*/&lt;/b&gt;&lt;/li&gt;
-		&lt;/ul&gt;
-		&lt;hr&gt;
+All data items in the computer are represented as strings of binary digits. In order to give these strings meaning, we need to have &lt;b&gt;data types&lt;/b&gt;. Data types provide an interpretation for this binary data so that we can think about the data in terms that make sense with respect to the problem being solved. These low-level, built-in data types (sometimes called the primitive data types) provide the building blocks for algorithm development.
 
-		&lt;li&gt;
-			&lt;b&gt;&lt;u&gt;
-				Printf and Scanf		
-			&lt;/u&gt;&lt;/b&gt;
-		&lt;/li&gt;
-		printf() and scanf() functions are inbuilt library functions in C which are available in C library by default. These functions are declared and related macros are defined in “stdio.h” which is a header file. &lt;br&gt;
-		&lt;b&gt;printf() function&lt;/b&gt;&lt;br&gt;
-		printf() function is used to print the “character, string, float, integer, octal and hexadecimal values” onto the output screen. &lt;br&gt;
-		&lt;b&gt;scanf() function&lt;/b&gt;&lt;br&gt;
-		scanf() function is used to read character, string and numeric data from the keyboard. &#39;&lt;b&gt;&amp;amp;&lt;/b&gt;&#39; is used before variable name. It is just like a pointer which is used to point to the variable.&lt;br&gt;&lt;br&gt;
-		There are format specifiers which are required either to take input or print the output. The most common format specifiers are listed below.&lt;br&gt;
-		&lt;table border=&#34;1&#34;&gt;
-			&lt;th&gt;Format Specifier&lt;/th&gt;
-			&lt;th&gt;Data Type&lt;/th&gt;
-			&lt;tr&gt;
-				&lt;td&gt;&amp;#37;d&lt;/td&gt;
-				&lt;td&gt;int&lt;/td&gt;
-			&lt;/tr&gt;
-			&lt;tr&gt;
-				&lt;td&gt;&amp;#37;ld&lt;/td&gt;
-				&lt;td&gt;long int&lt;/td&gt;
-			&lt;/tr&gt;
-			&lt;tr&gt;
-				&lt;td&gt;&amp;#37;lld&lt;/td&gt;
-				&lt;td&gt;long long int&lt;/td&gt;
-			&lt;/tr&gt;
-			&lt;tr&gt;
-				&lt;td&gt;&amp;#37;c&lt;/td&gt;
-				&lt;td&gt;char&lt;/td&gt;
-			&lt;/tr&gt;
-			&lt;tr&gt;
-				&lt;td&gt;&amp;#37;s&lt;/td&gt;
-				&lt;td&gt;string&lt;/td&gt;
-			&lt;/tr&gt;
-			&lt;tr&gt;
-				&lt;td&gt;&amp;#37;f&lt;/td&gt;
-				&lt;td&gt;float&lt;/td&gt;
-			&lt;/tr&gt;
-			&lt;tr&gt;
-				&lt;td&gt;&amp;#37;lf&lt;/td&gt;
-				&lt;td&gt;double&lt;/td&gt;
-			&lt;/tr&gt;
-		&lt;/table&gt;&lt;br&gt;
-		When we use printf(), these specifiers are replaced by the value of the corresponding variable. Whereas, when we use scanf() the format specifier specifies the datatype of the value entered also stores in the corresponding variable.
-		&lt;hr&gt;
+&lt;h2&gt;What is Competitive Programming ?? &lt;/h2&gt; 
+People often get confused between &lt;b&gt;real-life programming&lt;/b&gt; and &lt;b&gt;competitive programming&lt;/b&gt;.The following example will help in removing this confusion : &lt;br&gt;&lt;br&gt;
 
-		&lt;li&gt;
-			&lt;b&gt;&lt;u&gt;
-				Example
-			&lt;/u&gt;&lt;/b&gt;
-		&lt;/li&gt;&lt;br&gt;
-		Lets see an example to under more basic features and functionality of C language. &lt;br&gt;
-		&lt;pre&gt;&lt;code&gt;
-&amp;#47;*
-	This is a multi-line comment.
-	It is a basic c program to add 3 numbers and print the resultant number.
-*&amp;#47;
-&amp;#47;&amp;#47; It is a single line comment
 
-&amp;#35;include &amp;lt;;stdio.h&amp;gt;
+&lt;b&gt;You are in the jungle. You have a pocket-knife.&lt;/b&gt; Someone asks you to kill a mountain lion.&lt;br&gt;&lt;br&gt;
 
-&amp;#35;define ll long long  &amp;#47;&amp;#47; It is a Macro.
+Years of training has taught you well. You use your knife to sharpen a stick. You cut vines to lash sharp stones on one end. Maybe you&#39;re from a top university, and you&#39;ve learned to extract essential ingredients from plant and insect life around you to fashion a poison to tip your weapon with. &lt;br&gt;&lt;br&gt;
 
-int main&amp;#40;&amp;#41;
-&amp;#123;
-	int a&amp;#59;
-	int b,c&amp;#59;
-	ll int ans&amp;#59;
-	a = 0&amp;#59;
-	b = c = 0&amp;#59;
-	scanf&amp;#40;&#34;&amp;#37;d&#34;, &amp;#38;a&amp;#41;&amp;#59;
-	&amp;#47;&amp;#47; Scanf&amp;#40;&#34;&amp;#37;d &amp;#37;d&#34;,&amp;#38;b,&amp;#38;c&amp;#41;&amp;#59;
-	scanf&amp;#40;&#34;&amp;#37;d &amp;#37;d&#34;, &amp;#38;b, &amp;#38;c&amp;#41;&amp;#59;
-	ans = a + b + c&amp;#59;
-	printf&amp;#40;&#34;&amp;#37;lld\n&#34;, ans&amp;#41;&amp;#59;
+Convinced that you have an effective and efficient way to kill the lion, you set forth to accomplish your task. Maybe your stick is too short, or your poisons don&#39;t work. It&#39;s okay - you live to refine your method and try again another day.&lt;br&gt;&lt;br&gt;
 
-	return 0&amp;#59;
-&amp;#125;
-		&lt;/code&gt;&lt;/pre&gt; &lt;br&gt;
-		Lets try to understand the above code line by line. &lt;br&gt;
-		Firstly, it is a C code for taking 3 numbers as input from the user and printing the sum of those numbers as output.&lt;br&gt;
-		&lt;ul&gt;
-			&lt;li&gt;The first four lines are an example of a multiline comment.&lt;/li&gt;
-			&lt;li&gt;The next line of code is an example of a single line comment&lt;/li&gt;
-			&lt;li&gt;The next line of code is &lt;b&gt;#include &lt;stdio.h&gt;&lt;/b&gt;. The &lt;b&gt;#&lt;/b&gt; is called the preprocessor directive.&lt;br&gt; Here the preprocessor directive is used to include the content of the header file named &#39;stdio.h&#39; (replace this line of code with the content of that file). &lt;/li&gt;
-			&lt;li&gt;In the next line of code we defined a macro. A &lt;b&gt;Macro&lt;/b&gt; is a name given to a block of C statements as a pre-processor directive. Being a pre-processor, the block of code is communicated to the compiler before entering into the actual coding (main () function). A macro can be used to subsitute the block of code with any identifier the programmer wants. It is declared as &lt;b&gt;#define identifier block_of_code&lt;/b&gt;. For example, here we are defining long long as ll and we can use &#39;ll&#39; in the code in´place of long long. When the code will compile all the &#39;ll&#39; will be subsituted to &#39;long long&#39;&lt;/li&gt;
-			&lt;li&gt;The next line of code is the main function from where the execution of any C program begins. &lt;/li&gt; &lt;!-- Language --&gt;
-			&lt;li&gt;The following line indicates the beginning of any function&lt;/li&gt;
-			&lt;li&gt;In next 3 lines we declare all the required variables for the program.&lt;/li&gt;
-			&lt;li&gt;The next 2 lines of code depict different ways to initialize the variables.&lt;/li&gt;
-			&lt;li&gt;There are different ways to take the input. We can either take the input numbers one by one or all three numbers together in a single scanf statement.&lt;/li&gt;
-			&lt;li&gt;The next line (comment) is just to remind you that C is &lt;b&gt;Case Sensitive Language&lt;/b&gt; so if we write Scanf instead of scanf, you will get a compilation error.&lt;/li&gt;
-			&lt;li&gt;The next line of code is an arithmetic instruction which is used to perform mathematical operations between constant and variables (in this case add three numbers and store them in another variable).&lt;/li&gt;
-			&lt;li&gt;In next line we print the answer.&lt;/li&gt;
-			&lt;li&gt;Next line terminates the C program(main function) and returns 0.&lt;/li&gt;
-			&lt;li&gt;The last line indicates the end of any(in this case &#39;main&#39;) function.&lt;/li&gt;
-		&lt;/ul&gt;
-		&lt;hr&gt;
-	&lt;/ul&gt;
-&lt;/div&gt;</textarea>
+That&#39;s &lt;b&gt;&#34;real-life&#34;&lt;/b&gt; programming.&lt;br&gt;&lt;br&gt;
+
+In competitive programming, you start out with the same resources (a pocket-knife), except &lt;b&gt;&lt;i&gt;you have 2 minutes to kill the lion.&lt;/i&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+
+In more technical terms &lt;b&gt;&#34;Competitive programming is a mind sport usually held over the Internet or a local network, involving participants trying to program according to provided specifications. Contestants are referred to as sport programmers.&#34;&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+
+&lt;h2&gt;Prerequisite  for starting Competitive Programming ?&lt;/h2&gt;&lt;br&gt;
+&lt;img src = &#34;https://s15.postimg.org/7hr7jyx6z/image.jpg&#34;/ height=&#34;302&#34; width=&#34;302&#34;&gt;&lt;br&gt;&lt;br&gt;
+
+&lt;h2 style=&#39;text-align: center&#39;&gt;How to Start ? &lt;h2/&gt;
+
+1.Select a language&lt;br&gt;
+2. Start learning syntax and basic constructs.&lt;br&gt;
+3.Learn to express your logic through codes. (Make sure they are correclty &lt;b&gt;&lt;i&gt;intended)&lt;/i&gt;&lt;b&gt;
+&lt;center&gt;&lt;h3&gt;PRACTICE! PRACTICE ! PRACTICE!&lt;/h3&gt;&lt;/center&gt;
+&lt;hr&gt;
+&lt;h3&gt; WHY ARE YOU WAITING ??? START YOUR CODING JOURNEY :) &lt;/h3&gt;
+</textarea>
 
 
 

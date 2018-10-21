@@ -7,11 +7,11 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from .forms import *
-from models import question,article
+from models import *
 
 # Create your views here.
 def index(request):
-    return render(request,'index/index.html')
+    return render(request,'learn/learn.html')
 
 def signup(request):
     if request.method == 'POST':
@@ -59,8 +59,38 @@ def practice(request):
 def learn(request):
     return render(request,"learn/learn.html")
 def reversing(request,id):
-    articles=article.objects.all()
+    articles=reversingarticle.objects.all()
     tag="learn/reversing/"
+    tag+=id+".html"
+    print tag
+    return render(request,tag,{'articles':articles})
+def forensics(request,id):
+    articles=forensicsarticle.objects.all()
+    tag="learn/forensics/"
+    tag+=id+".html"
+    print tag
+    return render(request,tag,{'articles':articles})
+def crypto(request,id):
+    articles=cryptoarticle.objects.all()
+    tag="learn/crypto/"
+    tag+=id+".html"
+    print tag
+    return render(request,tag,{'articles':articles})
+def web(request,id):
+    articles=webarticle.objects.all()
+    tag="learn/web/"
+    tag+=id+".html"
+    print tag
+    return render(request,tag,{'articles':articles})
+def binary(request,id):
+    articles=binaryarticle.objects.all()
+    tag="learn/binary/"
+    tag+=id+".html"
+    print tag
+    return render(request,tag,{'articles':articles})
+def general(request,id):
+    articles=generalarticle.objects.all()
+    tag="learn/general/"
     tag+=id+".html"
     print tag
     return render(request,tag,{'articles':articles})
