@@ -6,8 +6,11 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
+from django.contrib.auth.forms import *
 from .forms import *
 from models import *
+from django.contrib import *
+from django.contrib.auth import update_session_auth_hash
 
 # Create your views here.
 def index(request):
@@ -33,6 +36,22 @@ def profile(request):
     #print request.user.id
     return render(request,'userdetails/profile.html')
 
+def changepassword(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            print "fff"
+            user = form.save()
+            update_session_auth_hash(request, user)  # Important!
+            messages.success(request, 'Your password was successfully updated!')
+            return redirect('/profile')
+        else:
+            messages.error(request,('Please correct the error below.'))
+    else:
+        form = PasswordChangeForm(request.user)
+    return render(request, 'changepassword/pass.html', {
+        'form': form
+}) 
 
 def sample_view(request):
     current_user = request.user
