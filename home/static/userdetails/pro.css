@@ -16,7 +16,11 @@ h1 {
   letter-spacing: 0.1rem;
   margin-bottom: 0;
 }
-
+.container {
+  width: 150%;
+  height: 90%;
+  margin-left: -200px;
+}
 .button-edit, .button-connect {
   font-size: 1.2rem;
   font-weight: 400;
@@ -68,35 +72,35 @@ strong {
   font-weight: 600;
 }
 
-.user_profile {
+.user_profile1 {
   max-width: 960px;
   margin: 0 auto;
   position: center;
 }
-.user_profile .header {
+.user_profile1 .header {
   background-image: linear-gradient(to right, rgba(121, 146, 128, 0.9) 0%, rgba(150, 207, 195, 0.8) 50%, rgba(121, 146, 128, 0.9) 100%), url("https://static.pexels.com/photos/58420/pexels-photo-58420.jpeg");
   background-size: cover;
   background-position: 0px 100%;
   background-repeat: no-repeat;
   padding:3rem 0 0;
 }
-.user_profile .header h1 {
+.user_profile1 .header h1 {
   margin: 2rem 0 3rem;
 }
-.user_profile .header p {
+.user_profile1 .header p {
   margin-bottom: 3rem;
 }
-.user_profile .header .row {
+.user_profile1 .header .row {
   padding: 0 4rem;
 }
-.user_profile .header .avatar {
+.user_profile1 .header .avatar {
   width: 150px;
   height: 100px;
   background: #3BD3B4;
   border-radius: 50%;
   position: relative;
 }
-.user_profile .header .avatar span {
+.user_profile1 .header .avatar span {
   position: absolute;
   width: 100%;
   line-height: 100px;
@@ -105,48 +109,48 @@ strong {
   font-weight: bold;
   font-size: 5rem;
 }
-.user_profile .header .upgrade {
+.user_profile1 .header .upgrade {
   text-align: right;
   font-size: 1.4rem;
   line-height: 2.6rem;
 }
-.user_profile .tabs-area {
+.user_profile1 .tabs-area {
   background: #1d2528;
   padding: 10rem 10rem 10rem;
 }
-.user_profile .tabs-area ul.tabs {
+.user_profile1 .tabs-area ul.tabs {
   border-bottom: 0.3rem solid #2c3437;
   list-style: none;
   padding: 0.5rem 2rem;
 }
-.user_profile .tabs-area ul.tabs > li {
+.user_profile1 .tabs-area ul.tabs > li {
   padding: 0 1rem;
   text-transform: uppercase;
   display: inline-block;
   font-weight: 400;
   font-size: 1.3rem;
 }
-.user_profile .tabs-area ul.tabs > li a {
+.user_profile1 .tabs-area ul.tabs > li a {
   color: #868e91;
 }
-.user_profile .tabs-area ul.tabs > li a.active {
+.user_profile1 .tabs-area ul.tabs > li a.active {
   color: white;
   padding-bottom: 0.2rem;
   border-bottom: 2px solid #3BD3B4;
 }
-.user_profile .tabs-area .tab .title {
+.user_profile1 .tabs-area .tab .title {
   padding-bottom: 2rem;
 }
-.user_profile .tabs-area .tab .title h5 {
+.user_profile1 .tabs-area .tab .title h5 {
   font-size: 2rem;
 }
-.user_profile .tabs-area .tab h6, .user_profile .tabs-area .tab label {
+.user_profile1 .tabs-area .tab h6, .user_profile1 .tabs-area .tab label {
   color: #868e91;
   font-weight: 600;
   font-size: 1.3rem;
   text-transform: uppercase;
 }
-.user_profile .tabs-area .tab form input, .user_profile .tabs-area .tab form select {
+.user_profile1 .tabs-area .tab form input, .user_profile1 .tabs-area .tab form select {
   background-color: transparent;
   border: 0;
   border-radius: 0;
@@ -156,22 +160,22 @@ strong {
   font-size: 1.2rem;
   color: white;
 }
-.user_profile .tabs-area .tab form input.empty, .user_profile .tabs-area .tab form select.empty {
+.user_profile1 .tabs-area .tab form input.empty, .user_profile1 .tabs-area .tab form select.empty {
   border-bottom: 2px solid #868e91;
 }
-.user_profile .tabs-area .tab form .row .one-half {
+.user_profile1 .tabs-area .tab form .row .one-half {
   overflow: visible;
   padding: 0 2rem;
 
 }
-.user_profile .tabs-area .tab form .row .one-half:first-child {
+.user_profile1 .tabs-area .tab form .row .one-half:first-child {
   padding: 0 4rem 0 0;
   padding-right: 100px;
 }
-.user_profile .tabs-area .complete {
+.user_profile1 .tabs-area .complete {
   text-align: center;
 }
-.user_profile .tabs-area .complete .pie {
+.user_profile1 .tabs-area .complete .pie {
   display: inline-block;
   position: relative;
   width: 5em;
@@ -183,7 +187,7 @@ strong {
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
-.user_profile .tabs-area .complete .pie .slice-right {
+.user_profile1 .tabs-area .complete .pie .slice-right {
   position: absolute;
   z-index: 11;
   background-color: #3BD3B4;
@@ -194,7 +198,7 @@ strong {
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
-.user_profile .tabs-area .complete .pie .slice-left {
+.user_profile1 .tabs-area .complete .pie .slice-left {
   position: absolute;
   z-index: 11;
   background-color: #3BD3B4;
@@ -205,7 +209,7 @@ strong {
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
-.user_profile .tabs-area .complete .pie .percent {
+.user_profile1 .tabs-area .complete .pie .percent {
   position: absolute;
   z-index: 20;
   top: 0.7rem;
@@ -218,7 +222,7 @@ strong {
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
-.user_profile .tabs-area .complete .pie .number {
+.user_profile1 .tabs-area .complete .pie .number {
   position: absolute;
   z-index: 30;
   width: 100%;
@@ -229,15 +233,15 @@ strong {
   font-weight: 400;
   color: white;
 }
-.user_profile .tabs-area .complete .pie .number sup {
+.user_profile1 .tabs-area .complete .pie .number sup {
   font-weight: 300;
   font-size: 2rem;
 }
-.user_profile .tabs-area .complete .pie .number span {
+.user_profile1 .tabs-area .complete .pie .number span {
   text-transform: uppercase;
   font-size: 1rem;
 }
-.user_profile .tabs-area .complete .pie .slice-right {
+.user_profile1 .tabs-area .complete .pie .slice-right {
   animation-delay: 1.5s;
   animation-duration: 0.5s;
   animation-name: right-slice;
@@ -245,7 +249,7 @@ strong {
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
-.user_profile .tabs-area .complete .pie .slice-left {
+.user_profile1 .tabs-area .complete .pie .slice-left {
   animation-delay: 1.5s;
   animation-duration: 0.3s;
   animation-name: left-slice;
@@ -276,7 +280,7 @@ strong {
   }
 }
 @media (min-width: 1200px) {
-  .user_profile .tabs-area .tab .title {
+  .user_profile1 .tabs-area .tab .title {
     padding-bottom: 1rem;
   }
 }

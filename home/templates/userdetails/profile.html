@@ -1,62 +1,68 @@
 {% include "base.html" %}
 <link rel="stylesheet" href="/static/userdetails/pro.css">
-<main>
-  <section class="user_profile">
-      <div class="container tabs-area">
-          <div class="tab">
-        <div class="row title">
-          <div class="one-half column">
-            <h5>Profile</h5>
-          </div>
-            <!-- <div class="one-half column r-align">
-           <a href="/rank" class="button button-upgrade">My Rank</a>
-        </div> -->
-        </div>
-        <div class="row">
-          <div class="two-thirds column">
-            <form>
-              <div class="row">
-                <div class="one-half column">
-                  <label for="username">UserName</label>
-                  <input class="u-full-width" readonly type="text" value=": {{ user }}" id="username">
-                </div>
+<link rel="stylesheet" href="/static/learn//css/default.min.css">
+<body > 
 
+    <main>
+        <section class="user_profile1">
+            <div class="container tabs-area">
+                <div class="tab">
+              <div class="row title">
+                <div class="one-half column">
+                  <h5>Profile</h5>
+                </div>
+                  <!-- <div class="one-half column r-align">
+                 <a href="/rank" class="button button-upgrade">My Rank</a>
+              </div> -->
               </div>
               <div class="row">
-                <div class="one-half column">
-                  <label for="name">Name</label>
-                  <input class="u-full-width" readonly type="text" value=": {{ user.first_name }}" id="name">
+                <div class="two-thirds column">
+                  <form>
+                    <div class="row">
+                      <div class="one-half column">
+                        <label for="username">UserName</label>
+                        <input class="u-full-width" readonly type="text" value=": {{ user }}" id="username">
+                      </div>
+      
+                    </div>
+                    <div class="row">
+                      <div class="one-half column">
+                        <label for="name">Name</label>
+                        <input class="u-full-width" readonly type="text" value=": {{ user.first_name }}" id="name">
+                      </div>
+      
+                    </div>
+      
+                      <div class="row">
+                      <div class="one-half column ">
+                        <label for="email">Email</label>
+                        <input class=""  readonly type="email" value=": {{ user.email}}" id="email">
+                      </div>
+      
+                    </div>
+                  </form>
                 </div>
-
-              </div>
-
-                <div class="row">
-                <div class="one-half column ">
-                  <label for="email">Email</label>
-                  <input class=""  readonly type="email" value=": {{ user.email}}" id="email">
+      
+                <div class="one-third column complete">
+                  <a href="/editprofile" class="button-edit">Edit Profile</a>
                 </div>
-
+                  <div class="one-third column complete">
+                        <h1>   </h1>
+                </div>
+                  <div class="one-third column complete">
+                        <h1>   </h1>
+                </div>
+                  <div class="one-third column complete">
+                        <h1>   </h1>
+                </div>
+                  <div class="one-third column complete">
+                  <a href="/changepassword" class="button-edit">Change Password</a>
+                </div>
               </div>
-            </form>
+            </div>
           </div>
+        </section>
+      </main>
 
-          <div class="one-third column complete">
-            <a href="/editprofile" class="button-edit">Edit Profile</a>
-          </div>
-            <div class="one-third column complete">
-                  <h1>   </h1>
-          </div>
-            <div class="one-third column complete">
-                  <h1>   </h1>
-          </div>
-            <div class="one-third column complete">
-                  <h1>   </h1>
-          </div>
-            <div class="one-third column complete">
-            <a href="/changepassword" class="button-edit">Change Password</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
+
+</body>

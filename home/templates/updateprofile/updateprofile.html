@@ -1,10 +1,12 @@
-<link rel="stylesheet" href="/static/updateprofile/updateprofile.css">
-<script src="/static/forgotpassword/jquery.min.js"></script>
-<script src="/static/forgotpassword/bootstrap.min.js"></script>
-<script src="/static/forgotpassword/jquery.easing.min.js"></script>
+{% include "base.html" %}
+
 
 <html lang="en">
 <head>
+    
+    <script src="/static/forgotpassword/jquery.min.js"></script>
+    <script src="/static/forgotpassword/bootstrap.min.js"></script>
+    <script src="/static/forgotpassword/jquery.easing.min.js"></script>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,22 +14,27 @@
 	<link rel="stylesheet" type="text/css" href="main.css">
   <link href="https://fonts.googleapis.com/css?family=Pavanam" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+  <link rel="stylesheet" href="/static/updateprofile/updateprofile.css">
 </head>
 <body>
-<div class="container">
-  <div class="main">
-    <div class="form">
-      <div class="signIn">
+<div class="container1">
+  <div class="main1">
+    <div class="form1">
+      <div class="signIn1">
           <form  method="post">
-            <div class="signIn__title">DETAILS</div>
+            <div class="signIn__title1">DETAILS</div>
             {% csrf_token %}
              {{ profile_form.as_p }}
-            <input class="input__button"type="submit" class="button" value="Save" />
-              <style>
-                label {
+             {{ proile_form.field.as_hidden }}
+             <style>
+                .signIn1 label {
                     display: none;
+                    visibility: unset;
                 }
+                
             </style>
+            <input class="input__button"type="submit" class="button" value="Save" />
+             
         <script>
           $('#id_first_name').attr('placeholder','Name');
           $('#id_last_name').attr('placeholder','Second Name');
@@ -36,10 +43,10 @@
           </form>
       </div>
       <div class="signUp">
-        <div class="wrap">
-          <div class="signUp__title">USER PROFILE</div>
+          <div class="wrap">
+            <div class="signUp__title1">USER PROFILE</div>
+          </div>
         </div>
-      </div>
     </div>
     </div>
 </div>
