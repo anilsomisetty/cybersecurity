@@ -6,10 +6,10 @@ html, body
 .logo2
 {
     position: relative;
-    left: 0%;
+    /* left: 0%;
     top: -70%;
     height: 200%;
-    width: 18%;
+    width: 18%; */
 }
 
 .effect2
@@ -17,10 +17,14 @@ html, body
     display: inline-block;
     background-color: white;
     position:relative;
+    /* left: 0%;
+    top: -70%;
+    height: 200%;
+    width: 18%; */
     top: 0%;
     left: 0%;
     width: 100%;
-    height: 53px;
+    
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 0px 5px 0 rgba(0, 0, 0, 0.2);
 }
 

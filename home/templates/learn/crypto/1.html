@@ -1,3 +1,4 @@
+{%include "base.html"%}
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,23 +20,6 @@
     </head>
     <header>
         <body style="background-color: #f7f7f7; position: relative">
-
-<div class="effect2">
-    <a href="/"><img src="/static/auth/title.png" alt="Image Not Found" class = "logo2"></a>
-    <a href="/" id="headerhome" class="homelabel"><i class="fa fa-home" style="cursor: pointer"></i> <label style="cursor: pointer">Home</label></a>
-    <a href="/learn" id="headerlearn" class="learnlabel"><i class="fa fa-book" style="cursor: pointer"></i> <label style="cursor: pointer">Learn</label></a>
-    <a href="/practice" id="headerpractice" class="problemslabel"><i class="fa fa-pencil" style="cursor: pointer"></i> <label style="cursor: pointer">Practice</label></a>
-    <a href="/useshell" id="headercontests" class="contestslabel"><i class="fa fa-terminal" style="cursor: pointer"></i> <label style="cursor: pointer">Shell</label></a>
-    <a href="/add_articles" id="headerrankings" class="rankingslabel"><i class="fa fa-plus" style="cursor: pointer"></i> <label style="cursor: pointer">Add Articles</label></a>
-    {% if user.is_authenticated %}
-    <a data-toggle="modal" class="loginbutton" href="/profile">Profile</a>
-        <a data-toggle="modal" class="signupbutton" href="/logout">Logout</a>
-    {% else %}
-        <a data-toggle="modal" class="loginbutton" href="/login">Log In</a>
-        <a data-toggle="modal" class="signupbutton" href="/signup">Sign Up</a>
-    {% endif %}
-    
-</div>
 
 
     <div class="modal fade" id="loginsignupmodal" role="dialog" data-backdrop="static" data-keyboard="false">
