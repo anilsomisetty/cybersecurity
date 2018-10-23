@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^signup/$', views.signup, name='signup'),
     url(r'^profile/',views.profile, name='profile'),
     url(r'^changepassword/',views.changepassword, name='changepassword'),
+    url(r'^forgotpassword/',views.forgotpassword, name='forgotpassword'),
     url(r'^learn/', views.learn,name="learn"),
     url(r'^reversing/(?P<id>[0-9]+)$', views.reversing,name="reversing"),
     url(r'^forensics/(?P<id>[0-9]+)$', views.forensics,name="forensics"),

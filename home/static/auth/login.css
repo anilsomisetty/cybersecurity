@@ -165,3 +165,7 @@ fieldset{
   display: flex;
   width: 600px;
 }
+.small-text{
+  color:#fff;
+  font-size:13px
+}

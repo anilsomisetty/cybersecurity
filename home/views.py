@@ -7,7 +7,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import *
-from .forms import *
+from forms import *
 from models import *
 from django.contrib import *
 from django.contrib.auth import update_session_auth_hash
@@ -29,7 +29,26 @@ def signup(request):
     else:
         form = SignUpForm()
     return render(request, 'auth/signup.html', {'form': form})
-
+def forgotpassword(request):
+    if request.method == 'POST':
+        form=ForgotpasswordForm(request.POST)
+        if form.is_valid():
+            username=form.cleaned_data['username']
+            email=form.cleaned_data['email']
+            user_num=User.objects.filter(username=username,email=email).count()
+            
+            if user_num > 0 :
+                user=User.objects.get(username=username,email=email)
+                s=""
+                s="qwer123"
+                user.set_password('qwer123')
+                user.save()
+                return render(request,'forgotpassword/changepasswordsuccess.html',{'password':s})
+            else :
+                return render(request,'forgotpassword/changepaswordunsuccess.html')
+    else:
+        form=ForgotpasswordForm
+        return render(request,'forgotpassword/forgotpassword.html',{'form': form})
 
 
 def profile(request):
