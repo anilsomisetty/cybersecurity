@@ -1,31 +1,57 @@
-add article page
 
-<link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
 
+<script type="text/javascript">
+    tinymce.init({
+        selector: "#mceEditor",
+        theme: "modern",
+        plugins: [
+            "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+            "searchreplace wordcount visualblocks visualchars code fullscreen",
+            "insertdatetime media nonbreaking save table contextmenu directionality",
+            "emoticons template paste textcolor colorpicker textpattern imagetools"
+        ],
+        toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+        toolbar2: "print preview media | forecolor backcolor emoticons",
+        image_advtab: true,
+        templates: [
+            {title: 'Test template 1', content: 'Test 1'},
+            {title: 'Test template 2', content: 'Test 2'}
+        ]
+    });
+    </script>
+</head>
 
-<link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-markdown/2.2.1/css/bootstrap-markdown.min.css">
+<body>
+        Add Article Page
+    <form method="post" >
+        {% csrf_token %}
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-markdown/2.2.1/js/bootstrap-markdown.js"></script>
-
-<form>
-    <input name="title" type="text" placeholder="Title?" />
-    <textarea name="content" data-provide="markdown" rows="10">
-#Heading ONE
-
-- this is heading two
-- and heding three
-
-> quote here
-
-
-    </textarea>
-    <label class="checkbox">
-      <input name="publish" type="checkbox"> Publish
-    </label>
-    <hr/>
-    <button type="submit" class="btn">Submit</button>
-  </form>
-  
+        <p ><input   name="articlecategory"  type="text"  Placeholder="Category" required></p>
+        <p><input   name="articlename"  type="text"  Placeholder="Title" required></p> 
+        <textarea name="articlecontent" id="mceEditor" Placeholder="Content here" rows="20"></textarea>
+    </br>
+    
+    
+        <button type="submit" class="btn" href="#">SUBMIT</button>
+                
+                
+                
+                <style>
+                    .log-form label {
+                        display: none;
+                    }
+                    
+                </style>
+            <script>
+            $('#id_articleid').attr('placeholder', 'ArticleId');
+            $('#id_articlecategory').attr('placeholder', 'Article Category');
+            
+            </script>
+            
+    </form>
+</body>
+</html>

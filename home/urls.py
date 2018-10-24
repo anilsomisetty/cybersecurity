@@ -24,3 +24,4 @@ urlpatterns = [
     url(r'^useshell/',views.shell, name='shell' ),
     # url(r'^user/',views.index, name='index' ), added as i changed redirect url after login
 ]
+

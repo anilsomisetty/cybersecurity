@@ -13,6 +13,7 @@ class SignUpForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('username', 'first_name' , 'email', 'password1', 'password2')
+
 class ForgotpasswordForm(forms.Form):
 	username=forms.CharField(max_length=100)
 	email=forms.EmailField(max_length=100)
@@ -31,3 +32,9 @@ class ProfileForm(forms.Form):
         first_name=cleaned_data.get('first_name')
         # last_name=cleaned_data.get('last_name')
         email=cleaned_data.get('email')		
+
+class articleForm(forms.Form):
+    articlecategory=forms.CharField(max_length=100)
+    articlename=forms.CharField(max_length=100)
+    articlecontent=forms.CharField(max_length=1000000000000)
+
