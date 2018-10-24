@@ -146,51 +146,51 @@ def practice(request):
     questions=question.objects.all()
     print questions
     return render(request,'practice/practice.html')
-    
+
 def learn(request):
-    return render(request,"learn/learn.html")
+    articles=article.objects.filter(articlecategory='reversing',approved=True)[:1].get()
+    rev_id = articles.articleid
+    articles=article.objects.filter(articlecategory='forensics',approved=True)[:1].get()
+    for_id =  articles.articleid
+    articles=article.objects.filter(articlecategory='crypto',approved=True)[:1].get()
+    cry_id =  articles.articleid
+    articles=article.objects.filter(articlecategory='web',approved=True)[:1].get()
+    web_id = articles.articleid
+    articles=article.objects.filter(articlecategory='binary',approved=True)[:1].get()
+    bin_id = articles.articleid
+    articles=article.objects.filter(articlecategory='general',approved=True)[:1].get()
+    gen_id = articles.articleid
+    return render(request,"learn/learn.html",{'r':rev_id, 'f':for_id,'c':cry_id,'b':bin_id,'w':web_id,'g':gen_id})
 
 def reversing(request,id):
-    articles=reversingarticle.objects.all()
-    tag="learn/reversing/"
-    tag+=id+".html"
-    print tag
-    return render(request,tag,{'articles':articles})
+    articles=article.objects.filter(articlecategory='reversing')
+    art =article.objects.get(articleid=str(id))
+    return render(request,"learn/1.html",{'articles':articles, 'art':art})
 
 def forensics(request,id):
-    articles=forensicsarticle.objects.all()
-    tag="learn/forensics/"
-    tag+=id+".html"
-    print tag
-    return render(request,tag,{'articles':articles})
+    articles=article.objects.filter(articlecategory='forensics')
+    art =article.objects.get(articleid=str(id))
+    return render(request,"learn/1.html",{'articles':articles, 'art':art})
 
 def crypto(request,id):
-    articles=cryptoarticle.objects.all()
-    tag="learn/crypto/"
-    tag+=id+".html"
-    print tag
-    return render(request,tag,{'articles':articles})
+    articles=article.objects.filter(articlecategory='crypto')
+    art =article.objects.get(articleid=str(id))
+    return render(request,"learn/1.html",{'articles':articles, 'art':art})
 
 def web(request,id):
-    articles=webarticle.objects.all()
-    tag="learn/web/"
-    tag+=id+".html"
-    print tag
-    return render(request,tag,{'articles':articles})
+    articles=article.objects.filter(articlecategory='web')
+    art =article.objects.get(articleid=str(id))
+    return render(request,"learn/1.html",{'articles':articles, 'art':art})
 
 def binary(request,id):
-    articles=binaryarticle.objects.all()
-    tag="learn/binary/"
-    tag+=id+".html"
-    print tag
-    return render(request,tag,{'articles':articles})
+    articles=article.objects.filter(articlecategory='binary')
+    art =article.objects.get(articleid=str(id))
+    return render(request,"learn/1.html",{'articles':articles, 'art':art})
 
 def general(request,id):
-    articles=generalarticle.objects.all()
-    tag="learn/general/"
-    tag+=id+".html"
-    print tag
-    return render(request,tag,{'articles':articles})
+    articles=article.objects.filter(articlecategory='general')
+    art =article.objects.get(articleid=str(id))
+    return render(request,"learn/1.html",{'articles':articles, 'art':art})
 
 
 

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>CodeBuddy</title>
+        <title>CyberSec</title>
         <link rel="icon" type="image/png" href="/images/favicon3.png">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="/static/learn//css/default.min.css">
@@ -21,7 +21,6 @@
 
     <header>
         <body style="background-color: #f7f7f7; position: relative">
-
 
 
 
@@ -156,14 +155,17 @@
             <div style="padding: 2%;">
                 <h3 style="font-size: 150%">Subtopics</h3>
                 <ul class="nav nav-pills nav-stacked">
+                
                     {% for article in articles %}
+                    {% if article.approved == True %}
                     <li role="presentation" id={{article.articleid}} style="font-size: 95%"><a href="{{article.articleid}}" > <div> {{ article.articlename }}</div> </a>
                     <script type="text/javascript" language="javascript">
-                        if ('{{article.articleid}}' == '1')
-                            document.getElementById('{{article.articleid}}').className = 'active';
+
+                            document.getElementById('{{art.articleid}}').className = 'active';
                         if ('visible' == 'hidden')
-                            document.getElementById('{{article.articleid}}').style.opacity = 0.5;
+                            document.getElementById('{{art.articleid}}').style.opacity = 0.5;
                     </script>
+                    {% endif %}
                     {% endfor %}
                     <!-- <li role="presentation" id="st2" style="font-size: 95%"><a href="?subtopic=2" > <div> Getting Started with C </div> </a>
                     <script type="text/javascript" language="javascript">
@@ -237,7 +239,7 @@
     <div class = "col-md-9 blog">
         <div id = "title" class="title">
             <div class="heading">
-                Basic C Programming <small style="font-size: 70%;"> ( World of Programming ) </small>
+                {{ art.articlename }}
                 
             </div>
         </div>
@@ -251,45 +253,8 @@
 </div>
 
 
-<textarea type="text" id='hiddenText' class="hide123">&lt;h1&gt;What is Programming ?&lt;/h1&gt;
-&lt;b&gt;Programming&lt;/b&gt; is the process of taking an algorithm and encoding it into a notation, a programming language, so that it can be executed by a computer. Although many programming languages and many different types of computers exist, the important first step is the need to have the solution. Without an algorithm there can be no program. &lt;br&gt;&lt;br&gt;
-
-
-Computer science is not the study of programming. Programming, however, is an important part of what a computer scientist does. Programming is often the way that we create a representation for our solutions. Therefore, this language representation and the process of creating it becomes a fundamental part of the discipline. &lt;br&gt;&lt;br&gt;
-
-&lt;b&gt;Algorithms&lt;/b&gt; describe the solution to a problem in terms of the data needed to represent the problem instance and the set of steps necessary to produce the intended result. Programming languages must provide a notational way to represent both the process and the data. To this end, languages provide control constructs and data types. &lt;br&gt;&lt;br&gt;
-
-&lt;b&gt;Control constructs&lt;/b&gt; allow algorithmic steps to be represented in a convenient yet unambiguous way. At a minimum, algorithms require constructs that perform sequential processing, selection for decision-making, and iteration for repetitive control. As long as the language provides these basic statements, it can be used for algorithm representation&lt;br&gt;&lt;br&gt;
-
-All data items in the computer are represented as strings of binary digits. In order to give these strings meaning, we need to have &lt;b&gt;data types&lt;/b&gt;. Data types provide an interpretation for this binary data so that we can think about the data in terms that make sense with respect to the problem being solved. These low-level, built-in data types (sometimes called the primitive data types) provide the building blocks for algorithm development.
-
-&lt;h2&gt;What is Competitive Programming ?? &lt;/h2&gt; 
-People often get confused between &lt;b&gt;real-life programming&lt;/b&gt; and &lt;b&gt;competitive programming&lt;/b&gt;.The following example will help in removing this confusion : &lt;br&gt;&lt;br&gt;
-
-
-&lt;b&gt;You are in the jungle. You have a pocket-knife.&lt;/b&gt; Someone asks you to kill a mountain lion.&lt;br&gt;&lt;br&gt;
-
-Years of training has taught you well. You use your knife to sharpen a stick. You cut vines to lash sharp stones on one end. Maybe you&#39;re from a top university, and you&#39;ve learned to extract essential ingredients from plant and insect life around you to fashion a poison to tip your weapon with. &lt;br&gt;&lt;br&gt;
-
-Convinced that you have an effective and efficient way to kill the lion, you set forth to accomplish your task. Maybe your stick is too short, or your poisons don&#39;t work. It&#39;s okay - you live to refine your method and try again another day.&lt;br&gt;&lt;br&gt;
-
-That&#39;s &lt;b&gt;&#34;real-life&#34;&lt;/b&gt; programming.&lt;br&gt;&lt;br&gt;
-
-In competitive programming, you start out with the same resources (a pocket-knife), except &lt;b&gt;&lt;i&gt;you have 2 minutes to kill the lion.&lt;/i&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;
-
-In more technical terms &lt;b&gt;&#34;Competitive programming is a mind sport usually held over the Internet or a local network, involving participants trying to program according to provided specifications. Contestants are referred to as sport programmers.&#34;&lt;/b&gt;&lt;br&gt;&lt;br&gt;
-
-&lt;h2&gt;Prerequisite  for starting Competitive Programming ?&lt;/h2&gt;&lt;br&gt;
-&lt;img src = &#34;https://s15.postimg.org/7hr7jyx6z/image.jpg&#34;/ height=&#34;302&#34; width=&#34;302&#34;&gt;&lt;br&gt;&lt;br&gt;
-
-&lt;h2 style=&#39;text-align: center&#39;&gt;How to Start ? &lt;h2/&gt;
-
-1.Select a language&lt;br&gt;
-2. Start learning syntax and basic constructs.&lt;br&gt;
-3.Learn to express your logic through codes. (Make sure they are correclty &lt;b&gt;&lt;i&gt;intended)&lt;/i&gt;&lt;b&gt;
-&lt;center&gt;&lt;h3&gt;PRACTICE! PRACTICE ! PRACTICE!&lt;/h3&gt;&lt;/center&gt;
-&lt;hr&gt;
-&lt;h3&gt; WHY ARE YOU WAITING ??? START YOUR CODING JOURNEY :) &lt;/h3&gt;
+<textarea type="text" id='hiddenText' class="hide123">
+        {{ art.articlecontent }}
 </textarea>
 
 
@@ -301,106 +266,4 @@ In more technical terms &lt;b&gt;&#34;Competitive programming is a mind sport us
     var html = $.parseHTML(str);
     $log.append(html);
 </script>
-
-<footer>
-        <footer id="footer" class="footercontainer">
-        <small><label class="footerfollowus">Follow Us</label></small>
-        <a href="https://www.facebook.com/CodeBuddyOfficial" target="_blank" class="fa fa-facebook-square fa-2x fotterfb"></a>
-        <!-- <a href="https://www.facebook.com/CodeBuddyOfficial" target="_blank" class="fa fa-twitter fa-2x fottertw"></a>
-        <a href="https://www.facebook.com/CodeBuddyOfficial" target="_blank" class="fa fa-google-plus-square fa-2x fottergp"></a> -->
-        <a href="/aboutus" class="footeraboutus"><label style="cursor: pointer">About Us</label></a>
-        <a onclick="setTitle('Feedback')" data-toggle="modal" data-target="#feedbackorbug" class="footeraboutus"><label style="cursor: pointer">Feedback</label></a>
-        <a onclick="setDoubtTitle('Ask your Doubt')" data-toggle="modal" data-target="#askyourdoubt" class = "footeraboutus" style="border: none"><label style="cursor: pointer">Ask your Doubt</label></a>
-        <label class="footercopyright"><label class="fa fa-copyright"></label> 2017 CodeBuddy</label>
-        <label class="footercontactus">Contact Us</label>
-        <label class="fa fa-phone footercontactno"> +91 - 8445261407</label>
-        <label class="fa fa-phone footercontactno2"> +91 - 8858840981</label>
-        <label class="fa fa-envelope footercontactmail"> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="14677c7d7f7c75667375667325262420547379757d783a777b79">[email&#160;protected]</a></label>
-        <label class="fa fa-envelope footercontactmail2"> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7419151d184615071c031d1a4d41341319151d185a171b19">[email&#160;protected]</a></label>
-    </footer>
-
-    <div class="modal fade" id="feedbackorbug" role="dialog">
-        <div class="modal-dialog">
-
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title" id="feedbackorbugtitle"></h4>
-                </div>
-                <div class="modal-body" style="height: 100%">
-                    <div class="form-group">
-                        <label id="feedbackorbugmsg"></label>
-                        <textarea class="form-control" style="resize: none" required="" rows="7" name="feedbackorbugdescription" id="feedbackorbugdescription" placeholder=""></textarea>
-                    </div>
-                    <button onclick="feedbackorbug()" class="btn btn-default">Submit</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <div class="modal fade" id="askyourdoubt" role="dialog">
-        <div class="modal-dialog">
-            <div class = "modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title" id="doubttitle"></h4>
-                </div>
-                <div class="modal-body" style="height: 100%">
-                    <div class="form-group">
-                        <label id="doubtmsg"></label>
-                        <textarea class="form-control" style="resize: none" required="" rows="7" name="doubtdescription" id="doubtdescription" placeholder=""></textarea>
-                    </div>
-                    <button onclick="askyourdoubt()" class="btn btn-default">Submit</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" language="javascript">
-        var docheight = $(document).height();
-        var footertop = $('footer').offset().top;
-        var footerheight = $('footer').height();
-        document.getElementById('footer').style.top = String(docheight - (footerheight + footertop)) + 'px';
-
-        function setTitle(str) {
-            document.getElementById('feedbackorbugtitle').innerText = str;
-            document.getElementById('feedbackorbugdescription').value = '';
-            document.getElementById('feedbackorbugdescription').placeholder = str;
-        }
-
-        function setDoubtTitle(str) {
-            document.getElementById('doubttitle').innerText = str;
-            document.getElementById('doubtdescription').value = '';
-            document.getElementById('doubtdescription').placeholder = str;
-        }
-
-        function feedbackorbug() {
-            var feedbackorbugdescription = document.getElementById('feedbackorbugdescription').value;
-            $.post('/reportfeedbackorbug', {feedbackorbugdescription: feedbackorbugdescription}, function (res) {
-                if (res.success == 0)
-                    document.getElementById('feedbackorbugmsg').style.color = 'red';
-                else
-                    document.getElementById('feedbackorbugmsg').style.color = 'green';
-                document.getElementById('feedbackorbugmsg').innerText = res.msg;
-                $('#feedbackorbugmsg').hide().fadeIn(500).delay(1000).fadeOut(500);
-            });
-        }
-
-        function askyourdoubt() {
-            var doubtdescription = document.getElementById('doubtdescription').value;
-            $.post('/askingusdoubt',{doubtdescription: doubtdescription}, function (res) {
-                if (res.success == 0)
-                    document.getElementById('doubtmsg').style.color = 'red';
-                else
-                    document.getElementById('doubtmsg').style.color = 'green';
-                document.getElementById('doubtmsg').innerText = res.msg;
-                $('#doubtmsg').hide().fadeIn(500).delay(1000).fadeOut(500);
-            });
-        }
-
-    </script>
-
-</body>
-
-</footer>
-
 </html>
