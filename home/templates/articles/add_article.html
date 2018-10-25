@@ -1,4 +1,4 @@
-
+{%include "base.html"%}
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,16 +23,27 @@
         ]
     });
     </script>
+
+    <link rel='stylesheet' href='/static/addarticle/addarticle.css' />
 </head>
 
 <body>
-        Add Article Page
+        <h1>ADD ARTICLE</h1> 
     <form method="post" >
         {% csrf_token %}
 
-        <p ><input   name="articlecategory"  type="text"  Placeholder="Category" required></p>
+        <select name="articlecategory">
+            <option unselected hidden name="" >Choose Category  </option> 
+            <option name="reversing">Reversing </option>     
+            <option name="forensics"> Forensics</option>     
+            <option name="crypto"> Cryptography</option>     
+            <option name="web"> Web Exploitation </option>     
+            <option name="binary"> Binary Exploitation</option>     
+            <option name="general">General Skills </option>     
+        </select>
+        <br> </br>
         <p><input   name="articlename"  type="text"  Placeholder="Title" required></p> 
-        <textarea name="articlecontent" id="mceEditor" Placeholder="Content here" rows="20"></textarea>
+        <textarea name="articlecontent" id="mceEditor" Placeholder="Content here" rows="11" ></textarea>
     </br>
     
     

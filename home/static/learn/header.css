@@ -15,7 +15,7 @@ html, body
 .effect2
 {
     display: inline-block;
-    background-color: white;
+    background-color:rgb(51, 245, 245);
     position:relative;
     /* left: 0%;
     top: -70%;
@@ -400,7 +400,7 @@ html, body
     height: 100%;
     font-size: 110%;
     cursor: pointer;
-    color: #4C4A4D;
+    color: black;
     padding-left: 0.5%;
     padding-right: 0.5%;
     padding-top: 1.6%;
@@ -411,9 +411,9 @@ html, body
 {
     cursor: pointer;
     border: 6px;
-    border-color: #337ab7;
+    border-color: black;
     border-style: none none solid none;
-    color: #337ab7;
+    color: black;
     height: 100%;
     width: 5.7%;
 }
@@ -427,7 +427,7 @@ html, body
     height: 100%;
     font-size: 110%;
     cursor: pointer;
-    color: #4C4A4D;
+    color: black;
     padding-left: 0.5%;
     padding-right: 0.5%;
     padding-top: 1.6%;
@@ -454,7 +454,7 @@ html, body
     height: 100%;
     font-size: 110%;
     cursor: pointer;
-    color: #4C4A4D;
+    color: black;
     padding-left: 0.5%;
     padding-right: 0.5%;
     padding-top: 1.6%;
@@ -465,9 +465,9 @@ html, body
 {
     cursor: pointer;
     border: 6px;
-    border-color: #337ab7;
+    border-color:black;
     border-style: none none solid none;
-    color: #337ab7;
+    color: black;
     height: 100%;
     width: 5.7%;
 }
@@ -481,7 +481,7 @@ html, body
     height: 100%;
     font-size: 110%;
     cursor: pointer;
-    color: #4C4A4D;
+    color:black;
     padding-left: 0.5%;
     padding-right: 0.5%;
     padding-top: 1.6%;
@@ -492,9 +492,9 @@ html, body
 {
     cursor: pointer;
     border: 6px;
-    border-color: #337ab7;
+    border-color: black;
     border-style: none none solid none;
-    color: #337ab7;
+    color: black;
     height: 100%;
     width: 5.7%;
 }
@@ -575,7 +575,7 @@ html, body
     height: 100%;
     font-size: 110%;
     cursor: pointer;
-    color: #4C4A4D;
+    color: black;
     padding-left: 0.5%;
     padding-right: 0.5%;
     padding-top: 1.6%;
@@ -586,9 +586,9 @@ html, body
 {
     cursor: pointer;
     border: 6px;
-    border-color: #337ab7;
+    border-color: black;
     border-style: none none solid none;
-    color: #337ab7;
+    color: black;
     height: 100%;
     width: 5.7%;
 }

@@ -19,7 +19,7 @@ from django.template import RequestContext
 
 # Create your views here.
 def index(request):
-    return render(request,'learn/learn.html')
+    return render(request,'home.html')
 
 def signup(request):
     if request.method == 'POST':
@@ -129,7 +129,7 @@ def add_articles(request):
                 article_user = request.user
                 new_article = article(articlecategory=article_category, articlename=article_name, articlecontent=article_content,writtenby = article_user)
                 new_article.save()
-                return render(request,'articles/add_article.html', {'csrf_token': csrf_token})
+                return HttpResponseRedirect('/')
         else:
             add_article_form = articleForm()
         return render(request,'articles/add_article.html', {'add_article_form': add_article_form})
