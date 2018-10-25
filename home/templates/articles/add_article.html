@@ -33,13 +33,13 @@
         {% csrf_token %}
 
         <select name="articlecategory">
-            <option unselected hidden name="" >Choose Category  </option> 
-            <option name="reversing">Reversing </option>     
-            <option name="forensics"> Forensics</option>     
-            <option name="crypto"> Cryptography</option>     
-            <option name="web"> Web Exploitation </option>     
-            <option name="binary"> Binary Exploitation</option>     
-            <option name="general">General Skills </option>     
+            <option unselected hidden value="" >Choose Category  </option> 
+            <option value="reversing">Reversing </option>     
+            <option value="forensics"> Forensics</option>     
+            <option value="crypto"> Cryptography</option>     
+            <option value="web"> Web Exploitation </option>     
+            <option value="binary"> Binary Exploitation</option>     
+            <option value="general">General Skills </option>     
         </select>
         <br> </br>
         <p><input   name="articlename"  type="text"  Placeholder="Title" required></p> 
