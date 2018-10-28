@@ -143,9 +143,10 @@ def shell(request):
         return HttpResponseRedirect('/login')
 
 def practice(request):
-    questions=question.objects.all()
-    print questions
-    return render(request,'practice/practice.html')
+    # questions=question.objects.all()
+    # print questions
+    # return render(request,'practice/practice.html')
+    return HttpResponseRedirect('http://127.0.0.1:4000')
 
 def learn(request):
     articles=article.objects.filter(articlecategory='reversing',approved=True)[:1].get()

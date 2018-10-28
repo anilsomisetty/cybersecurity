@@ -1,0 +1,2 @@
+shell-node app.js -p 3000
+CTF-python serve.py
