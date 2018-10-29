@@ -1,0 +1,269 @@
+{%include "base.html"%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CyberSec</title>
+        <link rel="icon" type="image/png" href="/images/favicon3.png">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="/static/learn//css/default.min.css">
+        <script src="/static/learn/js/highlight.min.js"></script>
+        <script src="/static/learn/vendors/jquery/dist/jquery.min.js"></script>
+        <script src="/static/learn/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+        <link href='/static/learn/vendors/font-awesome/css/font-awesome.min.css' rel="stylesheet">
+        <link rel="stylesheet" href="/static/learn//vendors/bootstrap/dist/css/bootstrap.min.css">
+        <link rel='stylesheet' href='/static/learn/header.css' />
+        <link rel='stylesheet' href='/static/learn/blog.css' />
+        <link rel='stylesheet' href='/static/learn/subtopicscomments.css' />
+        <script src='/static/learn//js/anal.js'></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+
+    <header>
+        <body style="background-color: #f7f7f7; position: relative">
+
+
+
+    <div class="modal fade" id="loginsignupmodal" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" style="width: 35%">
+            <div class="modal-content">
+                <div class="modal-body loginsignupbody" style="height: 400px;">
+                    <div class="fa fa-times close" data-dismiss="modal" style="position: absolute; top: 1%; left: 95.5%;"></div>
+                    <ul class="nav nav-tabs" style="width: 95%; position: absolute; top: 7%;">
+                        <li id="loginli" style="width: 50%; text-align: center;"><a data-toggle="tab" href="#logintab">Log In</a></li>
+                        <li id="signupli" style="width: 49%; text-align: center;"><a id="tfat" data-toggle="tab" href="#signuptab">Sign Up</a></li>
+                    </ul>
+                    <div class="tab-content" style="position: absolute; top: 25%; width: 95%; padding: 2%; min-height: 300px;">
+                        <div class="tab-pane fade in" id="logintab">
+                            <input id = "username" maxlength="20" type = "text" required = "" class = "textfielduser textfield" placeholder = "Username"/>
+                            <input id = "password" maxlength="20" type = "password" required = "" class = "textfieldpassword textfield" placeholder = "Password"/>
+                            <input id = "login" onclick="Login()" type = "button" value = "Log In" class = "button1" />
+                            <a data-toggle="tab" onclick="func3()" href="#forgotpassword" class="forgotpassword"><small>Forgot Password ?</small></a>
+                            <label id="errormsg" class="errmsg"></label>
+                        </div>
+                        <div class="tab-pane fade in" id="signuptab">
+                            <input id = "handle" maxlength="20" type = "text" required = "" class = "textfielduser textfield" placeholder = "Username"/>
+                            <input id = "firstname" maxlength="20" type = "text" required = "" class = "textfieldfname textfield" placeholder = "First Name"/>
+                            <input id = "lastname" maxlength="20" type = "text" required = "" class = "textfieldlname textfield" placeholder = "Last Name"/>
+                            <input id = "emailid" maxlength="50" type = "text" required = "" class = "textfieldemail textfield" placeholder = "Email Id"/>
+                            <input id = "signup" onclick="SignUp()" type = "button" value = "Sign Up" class = "buttonSign" />
+                            <label id="errormsg2" class="errmsg2"></label>
+                        </div>
+                        <div class="tab-pane fade in" id="forgotpassword">
+                            <label style="position: absolute; left: 20%; width: 60%; text-align: center;">New password will be sent to following email id</label>
+                            <input id = "usernamefp" name = "usernamefp" maxlength="50" type = "text" required = "" class = "textfielduserfp textfield" placeholder = "Email Id"/>
+                            <input id = "signup" onclick="ForgotPassword()" type = "button" value = "Send Password" class = "buttonFP" />
+                            <label id="errormsg3" class="errmsg3"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" language="javascript">
+
+        function clearAll()
+        {
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            document.getElementById('handle').value = '';
+            document.getElementById('firstname').value = '';
+            document.getElementById('lastname').value = '';
+            document.getElementById('emailid').value = '';
+            document.getElementById('usernamefp').value = '';
+        }
+
+        function func1() {
+            document.getElementById('loginli').className = 'active';
+            document.getElementById('logintab').className = 'tab-pane fade in active';
+            document.getElementById('signupli').className = '';
+            document.getElementById('signuptab').className = 'tab-pane fade in';
+            document.getElementById('forgotpassword').className = 'tab-pane fade in';
+            clearAll();
+        }
+
+        function func2() {
+            document.getElementById('loginli').className = '';
+            document.getElementById('logintab').className = 'tab-pane fade in';
+            document.getElementById('signupli').className = 'active';
+            document.getElementById('signuptab').className = 'tab-pane fade in active';
+            document.getElementById('forgotpassword').className = 'tab-pane fade in';
+            clearAll();
+        }
+
+        function func3() {
+            document.getElementById('loginli').className = '';
+            document.getElementById('signupli').className = '';
+        }
+
+        function Login() {
+            $.post('/checkvaliduser', {username: document.getElementById('username').value, password: document.getElementById('password').value},
+            function(res) {
+                if (res.success == 0) {
+                    document.getElementById('errormsg').innerText = res.msg;
+                    document.getElementById('errormsg').style.color = 'red';
+                    $('#errormsg').fadeIn(500).delay(2000).fadeOut(500);
+                }
+                else {
+                    location.reload();
+                }
+            });
+        }
+
+        function SignUp() {
+            $.post('/signup', {
+                username: document.getElementById('handle').value,
+                fname: document.getElementById('firstname').value,
+                lname: document.getElementById('lastname').value,
+                emailid: document.getElementById('emailid').value
+            }, function (res) {
+                document.getElementById('errormsg2').innerText = res.msg;
+                if (res.success == 0) {
+                    document.getElementById('errormsg2').style.color = 'red';
+                }
+                else {
+                    document.getElementById('errormsg2').style.color = '#1FB618';
+                }
+                $('#errormsg2').fadeIn(500).delay(2000).fadeOut(500);
+            });
+        }
+
+
+        function ForgotPassword() {
+            $.post('/forgotpassword', {emailid: document.getElementById('usernamefp').value}, function (res) {
+                document.getElementById('errormsg3').innerText = res.msg;
+                if (res.success == 0) {
+                    document.getElementById('errormsg3').style.color = 'red';
+                }
+                else {
+                    document.getElementById('errormsg3').style.color = '#1FB618';
+                }
+                $('#errormsg3').fadeIn(500).delay(2000).fadeOut(500);
+            });
+        }
+
+    </script>
+
+</header>
+
+<div class = "row page" style="padding-top: 2%; width: 100%">
+    <div class = "col-md-3" style="padding-right: 2%">
+        
+        <div id='subtopics' class="subtopics row">
+
+            <div style="padding: 2%;">
+                <h3 style="font-size: 150%">Subtopics</h3>
+                <ul class="nav nav-pills nav-stacked">
+                
+                    {% for article in articles %}
+                    {% if article.approved == True %}
+                    <li role="presentation" id={{article.articleid}} style="font-size: 95%"><a href="{{article.articleid}}" > <div> {{ article.articlename }}</div> </a>
+                    <script type="text/javascript" language="javascript">
+
+                            document.getElementById('{{art.articleid}}').className = 'active';
+                        if ('visible' == 'hidden')
+                            document.getElementById('{{art.articleid}}').style.opacity = 0.5;
+                    </script>
+                    {% endif %}
+                    {% endfor %}
+                    <!-- <li role="presentation" id="st2" style="font-size: 95%"><a href="?subtopic=2" > <div> Getting Started with C </div> </a>
+                    <script type="text/javascript" language="javascript">
+                        if ('1' == '2')
+                            document.getElementById('st2').className = 'active';
+                        if ('visible' == 'hidden')
+                            document.getElementById('st2').style.opacity = 0.5;
+                    </script>
+                    
+                    <li role="presentation" id="st3" style="font-size: 95%"><a href="?subtopic=3" > <div> Decision Control Structure </div> </a>
+                    <script type="text/javascript" language="javascript">
+                        if ('1' == '3')
+                            document.getElementById('st3').className = 'active';
+                        if ('visible' == 'hidden')
+                            document.getElementById('st3').style.opacity = 0.5;
+                    </script>
+                    
+                    <li role="presentation" id="st4" style="font-size: 95%"><a href="?subtopic=4" > <div> Loops </div> </a>
+                    <script type="text/javascript" language="javascript">
+                        if ('1' == '4')
+                            document.getElementById('st4').className = 'active';
+                        if ('visible' == 'hidden')
+                            document.getElementById('st4').style.opacity = 0.5;
+                    </script>
+                    
+                    <li role="presentation" id="st5" style="font-size: 95%"><a href="?subtopic=5" > <div> Jump Statements </div> </a>
+                    <script type="text/javascript" language="javascript">
+                        if ('1' == '5')
+                            document.getElementById('st5').className = 'active';
+                        if ('visible' == 'hidden')
+                            document.getElementById('st5').style.opacity = 0.5;
+                    </script>
+                    
+                    <li role="presentation" id="st6" style="font-size: 95%"><a href="?subtopic=6" > <div> Arrays </div> </a>
+                    <script type="text/javascript" language="javascript">
+                        if ('1' == '6')
+                            document.getElementById('st6').className = 'active';
+                        if ('visible' == 'hidden')
+                            document.getElementById('st6').style.opacity = 0.5;
+                    </script>
+                    
+                    <li role="presentation" id="st7" style="font-size: 95%"><a href="?subtopic=7" > <div> Pointers </div> </a>
+                    <script type="text/javascript" language="javascript">
+                        if ('1' == '7')
+                            document.getElementById('st7').className = 'active';
+                        if ('visible' == 'hidden')
+                            document.getElementById('st7').style.opacity = 0.5;
+                    </script>
+                    
+                    <li role="presentation" id="st8" style="font-size: 95%"><a href="?subtopic=8" > <div> Functions </div> </a>
+                    <script type="text/javascript" language="javascript">
+                        if ('1' == '8')
+                            document.getElementById('st8').className = 'active';
+                        if ('visible' == 'hidden')
+                            document.getElementById('st8').style.opacity = 0.5;
+                    </script>
+                    
+                    <li role="presentation" id="st34" style="font-size: 95%"><a href="?subtopic=34" > <div> Structure </div> </a>
+                    <script type="text/javascript" language="javascript">
+                        if ('1' == '34')
+                            document.getElementById('st34').className = 'active';
+                        if ('visible' == 'hidden')
+                            document.getElementById('st34').style.opacity = 0.5;
+                    </script> -->
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    <div class = "col-md-9 blog">
+        <div id = "title" class="title">
+            <div class="heading">
+                {{ art.articlename }}
+                
+            </div>
+        </div>
+        <div id="description" class="description" >
+            <div id="log"></div>
+        </div>
+
+        
+
+    </div>
+</div>
+
+
+<textarea type="text" id='hiddenText' class="hide123">
+        {{ art.articlecontent }}
+</textarea>
+
+
+
+<script type="text/javascript" language="javascript">
+    document.getElementById('headerlearn').className = 'learnlabel selectedHeaderOption';
+    var str = document.getElementById('hiddenText').value;
+    var $log = $( '#log' );
+    var html = $.parseHTML(str);
+    $log.append(html);
+</script>
+</html>

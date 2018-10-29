@@ -19,6 +19,7 @@ urlpatterns = [
     url(r'^web/(?P<id>[0-9]+)$', views.web,name="web"),
     url(r'^binary/(?P<id>[0-9]+)$', views.binary,name="binary"),
     url(r'^general/(?P<id>[0-9]+)$', views.general,name="general"),
+    url(r'^tools/(?P<id>[0-9]+)$', views.tools,name="tools"),
     url(r'^practice/', views.practice,name="practice"),
     url(r'^add_articles/',views.add_articles, name='add_articles' ),
     url(r'^useshell/',views.shell, name='shell' ),
